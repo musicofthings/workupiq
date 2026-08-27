@@ -1,0 +1,16 @@
+name = "workupiq"
+main = "src/index.ts"
+compatibility_date = "2026-08-25"
+
+# Serve static assets from ./public
+# Worker script only runs first for /api/* routes
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+# Email Routing send binding
+# destination_address must be a verified Destination address
+[[send_email]]
+name = "SEB"
+destination_address = "shibi.kannan@gmail.com"

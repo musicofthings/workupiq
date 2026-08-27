@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorkupIQ Screen — local BYOK</title>
+  <meta name="description" content="Upload a pitch deck, extract claims, run an adversarial workup. Keys stay in the browser." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="mark" href="index.html">
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+          <rect x="1" y="1" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25"/>
+          <path d="M5 15.5V6.5h2.1l3.9 6.2h.1V6.5H13v9H10.9L7 9.3h-.1v6.2H5z" fill="currentColor"/>
+        </svg>
+        <span>WorkupIQ</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="mentor.html">Mentor</a>
+        <a href="app.html" class="nav-cta">Screen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <div class="wrap screen-page">
+      <header class="screen-intro">
+        <p class="kicker">Local · BYOK · nothing uploaded to WorkupIQ servers</p>
+        <h1>Screen a deck</h1>
+        <p class="lede">Key stays in this browser. Free models from the live catalog sit at the top of the list.</p>
+      </header>
+
+      <section class="screen-settings" aria-label="Provider settings">
+        <label class="field">
+          Provider
+          <select id="provider">
+            <option value="openrouter">OpenRouter</option>
+            <option value="nvidia">NVIDIA NIM</option>
+            <option value="grok">xAI Grok</option>
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
+            <option value="gemini">Google Gemini</option>
+            <option value="ollama">Ollama (local)</option>
+            <option value="custom">OpenAI-compatible</option>
+          </select>
+        </label>
+        <label class="field field-model">
+          Model
+          <select id="modelSelect"></select>
+        </label>
+        <label class="field">
+          Or paste model id
+          <input id="model" placeholder="provider/model" />
+        </label>
+        <label class="field">
+          Base URL
+          <input id="baseUrl" value="https://openrouter.ai/api/v1" />
+        </label>
+        <label class="field">
+          API key
+          <input id="apiKey" type="password" autocomplete="off" placeholder="stays in localStorage" />
+        </label>
+        <label class="field">
+          Company
+          <input id="company" placeholder="Acme" />
+        </label>
+        <div class="field field-action">
+          <span class="field-label-spacer">Catalog</span>
+          <button class="btn btn-ghost" id="refreshModels" type="button">Refresh models</button>
+        </div>
+      </section>
+      <p class="muted" id="keyHint">OpenRouter: free variants are listed first. Use openrouter/free for the free router.</p>
+      <p class="status-line" id="serverStatus">Checking local server…</p>
+      <p class="status-line" id="modelStatus"></p>
+
+      <section class="screen-work">
+        <div class="drop" id="drop">
+          <strong>Drop a PDF or PPTX</strong>
+          <p class="muted">or click to choose. Image-only charts are flagged in Hygiene — they are not OCR’d in v1.</p>
+          <input id="file" type="file" accept=".pdf,.pptx,application/pdf,application/vnd.openxmlformats-officedocument.presentationml.presentation" hidden />
+        </div>
+        <p class="status-line" id="fileStatus">No file yet.</p>
+        <fieldset class="attack-set">
+          <legend>Red team</legend>
+          <label class="master"><input type="checkbox" id="atk-master" checked /> Include red team</label>
+          <label><input type="checkbox" class="atk" id="atk-gatekeeper" checked /> Gatekeeper</label>
+          <label><input type="checkbox" class="atk" id="atk-wrapper" /> Wrapper / moat</label>
+          <label><input type="checkbox" class="atk" id="atk-forensic" /> Financial forensic</label>
+          <label><input type="checkbox" class="atk" id="atk-premortem" /> IC pre-mortem</label>
+        </fieldset>
+        <div class="row-actions">
+          <button class="btn btn-primary" id="runRedBtn" type="button" disabled>Run Red Team</button>
+          <button class="btn btn-ghost" id="runBtn" type="button" disabled>Run Pack only</button>
+          <button class="btn btn-ghost" id="downloadBtn" type="button" disabled>Download pack (.md)</button>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="verdict" type="button">Verdict</button>
+          <button class="tab" data-tab="workup" type="button">Workup</button>
+          <button class="tab" data-tab="faq" type="button">FAQ</button>
+          <button class="tab" data-tab="gatekeeper" type="button">Gatekeeper</button>
+          <button class="tab" data-tab="wrapper" type="button">Wrapper</button>
+          <button class="tab" data-tab="forensic" type="button">Forensic</button>
+          <button class="tab" data-tab="premortem" type="button">Pre-mortem</button>
+          <button class="tab" data-tab="hygiene" type="button">Hygiene</button>
+          <button class="tab" data-tab="extract" type="button">Extract</button>
+        </div>
+        <pre class="result" id="result">Upload a deck, set a key, run the Screen.</pre>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>WorkupIQ Screen · keys never posted to workupiq.com</p>
+      <p><a href="index.html">Back to site</a></p>
+    </div>
+  </footer>
+  <script src="screen.js"></script>
+</body>
+</html>
