@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WorkupIQ — The associate workup, before the associate exists</title>
   <meta name="description" content="WorkupIQ screens a pitch deck the way a fund’s LLM and junior associate will, then emits a text-dense workup and FAQ automated triage cannot treat as incomplete." />
-  <meta name="theme-color" content="#14110e" />
+  <meta name="theme-color" content="#141210" />
   <link rel="canonical" href="https://workupiq.com/" />
 
   <meta property="og:type" content="website" />
@@ -20,8 +20,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260910c" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -36,23 +36,22 @@
         <span>WorkupIQ</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#problem">Failure</a>
+        <a href="#problem">Why</a>
         <a href="#screen">Screen</a>
         <a href="#pack">Pack</a>
         <a href="#templates">Templates</a>
         <a href="mentor.html">Mentor</a>
-        <a href="app.html">Screen a deck</a>
-        <a href="app.html" class="nav-cta">Open app</a>
+        <a href="app.html" class="nav-cta">Open Screen</a>
       </nav>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileNav" id="menuBtn">Menu</button>
     </div>
     <div class="mobile-nav" id="mobileNav">
-      <a href="#problem">Failure</a>
+      <a href="#problem">Why</a>
       <a href="#screen">Screen</a>
       <a href="#pack">Pack</a>
       <a href="#templates">Templates</a>
       <a href="mentor.html">Mentor</a>
-      <a href="app.html">Open app</a>
+      <a href="app.html">Open Screen</a>
     </div>
   </header>
 
@@ -68,41 +67,44 @@
             WorkupIQ extracts every claim, attacks the gaps, and emits a text-dense pack the parser cannot treat as incomplete.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="app.html">Open the local app</a>
-            <a class="btn btn-ghost" href="#screen">See the Screen</a>
+            <a class="btn btn-primary" href="app.html">Screen a deck</a>
+            <a class="btn btn-ghost" href="#screen">How it works</a>
           </div>
           <p class="fine">Not a deck designer. Not investor matching. Not cybersecurity red teaming.</p>
         </div>
 
-        <aside class="doc" aria-label="Sample Workup excerpt">
-          <div class="doc-bar">
-            <span>Acme_WorkupIQ_Workup.md</span>
-            <span class="pill pill-advance">WIQ Verdict · Advance</span>
-          </div>
-          <div class="doc-body">
-            <p class="doc-kicker">Investment memo · 2 pages · text-selectable</p>
-            <h2>Acme Robotics — Series A workup</h2>
-            <p class="doc-meta">Confidential · prepared for automated pre-read · grounded to deck slides 4–11</p>
-            <h3>1. The ask</h3>
-            <p>$8.4M primary on a $36M post. 18-month runway to $4.1M ARR and first hospital system expansion.</p>
-            <h3>2. Unit economics (source: slide 8 table, not the chart image)</h3>
-            <table>
-              <thead>
-                <tr><th>Metric</th><th>Now</th><th>M18 target</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Gross margin</td><td>71%</td><td>76%</td></tr>
-                <tr><td>Net revenue retention</td><td>118%</td><td>130%</td></tr>
-                <tr><td>Payback</td><td>11 mo</td><td>8 mo</td></tr>
-              </tbody>
-            </table>
-            <h3>3. What the Gatekeeper still flags</h3>
-            <ul>
-              <li>TAM uses top-down only — bottoms-up hospital count not in deck text layer.</li>
-              <li>Regulatory path stated, not evidenced (no 510(k) docket ID).</li>
-            </ul>
-          </div>
-        </aside>
+        <div class="doc-stack">
+          <div class="doc-sheet" aria-hidden="true"></div>
+          <aside class="doc" aria-label="Sample Workup excerpt">
+            <div class="doc-bar">
+              <span>Acme_WorkupIQ_Workup.md</span>
+              <span class="pill pill-advance">WIQ Verdict · Advance</span>
+            </div>
+            <div class="doc-body">
+              <p class="doc-kicker">Investment memo · 2 pages · text-selectable</p>
+              <h2>Acme Robotics — Series A workup</h2>
+              <p class="doc-meta">Confidential · prepared for automated pre-read · grounded to deck slides 4–11</p>
+              <h3>1. The ask</h3>
+              <p>$8.4M primary on a $36M post. 18-month runway to $4.1M ARR and first hospital system expansion.</p>
+              <h3>2. Unit economics (source: slide 8 table, not the chart image)</h3>
+              <table>
+                <thead>
+                  <tr><th>Metric</th><th>Now</th><th>M18 target</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Gross margin</td><td>71%</td><td>76%</td></tr>
+                  <tr><td>Net revenue retention</td><td>118%</td><td>130%</td></tr>
+                  <tr><td>Payback</td><td>11 mo</td><td>8 mo</td></tr>
+                </tbody>
+              </table>
+              <h3>3. What the Gatekeeper still flags</h3>
+              <ul>
+                <li>TAM uses top-down only — bottoms-up hospital count not in deck text layer.</li>
+                <li>Regulatory path stated, not evidenced (no 510(k) docket ID).</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -154,84 +156,6 @@
       </div>
     </section>
 
-    <section id="templates">
-      <div class="wrap">
-        <p class="kicker">Templates</p>
-        <h2>Fill these. Then run the Screen.</h2>
-        <p class="lede">The FAQ tab stays empty when those answers are not in the deck text layer. An FAQ slide is not enough. Download, replace the brackets, export as selectable-text PDF, attach with the deck, and re-run.</p>
-        <p class="hero-actions">
-          <a class="btn btn-primary" href="templates/WorkupIQ_Templates.zip" download>Download all templates (.zip)</a>
-        </p>
-        <div class="pack-grid">
-          <article>
-            <p class="file">Workup</p>
-            <h3>2-page investment memo</h3>
-            <p>Partner-memo sections plus TAM, unit-economics, and competitive tables.</p>
-            <p><a href="templates/WorkupIQ_Investment_Memo_Template.md" download>Download .md</a></p>
-          </article>
-          <article>
-            <p class="file">FAQ</p>
-            <h3>Red-team diligence Q&amp;A</h3>
-            <p>Q1–Q8: moat, margins, CAC, burn, regulatory path, POV conversion, cap table.</p>
-            <p><a href="templates/WorkupIQ_RedTeam_FAQ_Template.md" download>Download .md</a></p>
-          </article>
-          <article>
-            <p class="file">Hygiene</p>
-            <h3>Appendix tables</h3>
-            <p>One raw table per chart so numbers survive flattening.</p>
-            <p><a href="templates/WorkupIQ_Appendix_Tables_Template.md" download>Download .md</a></p>
-          </article>
-          <article>
-            <p class="file">Attack</p>
-            <h3>Four red-team prompts</h3>
-            <p>Gatekeeper, wrapper test, financial forensic, IC pre-mortem.</p>
-            <p><a href="templates/WorkupIQ_RedTeam_Prompts.md" download>Download .md</a></p>
-          </article>
-          <article>
-            <p class="file">Inbox</p>
-            <h3>Email blurb</h3>
-            <p>Plaintext body and the three-file attachment order.</p>
-            <p><a href="templates/WorkupIQ_Email_Blurb_Template.md" download>Download .md</a></p>
-          </article>
-          <article>
-            <p class="file">Data room</p>
-            <h3>Notion master index</h3>
-            <p>00–06 tree an associate can scan in under 90 seconds.</p>
-            <p><a href="templates/WorkupIQ_Notion_Data_Room_Index.md" download>Download .md</a></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="pack">
-      <div class="wrap">
-        <p class="kicker">WorkupIQ Pack</p>
-        <h2>What ships with the deck</h2>
-        <div class="pack-grid">
-          <article>
-            <p class="file">WorkupIQ Workup</p>
-            <h3>2-page investment memo</h3>
-            <p>Partner-memo structure. TAM methodology in a table. Unit economics as numbers, not spark-lines. Competitive matrix in text. Markdown-friendly PDF.</p>
-          </article>
-          <article>
-            <p class="file">WorkupIQ FAQ</p>
-            <h3>Red-team diligence Q&amp;A</h3>
-            <p>Quantitative answers grouped the way institutions ask: moat, unit economics, regulatory, scientific, go-to-market. Written to survive “find reasons to pass.”</p>
-          </article>
-          <article>
-            <p class="file">WorkupIQ Hygiene</p>
-            <h3>Parser report</h3>
-            <p>Selectable text, reading order, flattened charts, missing captions. The list of things the fund model will not see unless you fix them.</p>
-          </article>
-          <article>
-            <p class="file">WorkupIQ Pack</p>
-            <h3>Dual-format delivery</h3>
-            <p>Visual deck stays human. Workup + FAQ + raw tables + Notion master index + email blurb go in the thread the associate actually scrapes.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="verdict">
       <div class="wrap">
         <p class="kicker">WIQ Verdict</p>
@@ -249,6 +173,80 @@
             <h3>Advance</h3>
             <p>Adversarial prompts no longer produce novel, well-supported pass reasons. Pack is ready for the inbox.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="pack">
+      <div class="wrap">
+        <p class="kicker">WorkupIQ Pack</p>
+        <h2>What ships with the deck</h2>
+        <div class="pack-grid">
+          <article>
+            <p class="file">Workup.md</p>
+            <h3>2-page investment memo</h3>
+            <p>Partner-memo structure. TAM methodology in a table. Unit economics as numbers, not spark-lines. Competitive matrix in text. Markdown-friendly PDF.</p>
+          </article>
+          <article>
+            <p class="file">FAQ.md</p>
+            <h3>Red-team diligence Q&amp;A</h3>
+            <p>Quantitative answers grouped the way institutions ask: moat, unit economics, regulatory, scientific, go-to-market. Written to survive “find reasons to pass.”</p>
+          </article>
+          <article>
+            <p class="file">Hygiene.md</p>
+            <h3>Parser report</h3>
+            <p>Selectable text, reading order, flattened charts, missing captions. The list of things the fund model will not see unless you fix them.</p>
+          </article>
+          <article>
+            <p class="file">Pack</p>
+            <h3>Dual-format delivery</h3>
+            <p>Visual deck stays human. Workup + FAQ + raw tables + Notion master index + email blurb go in the thread the associate actually scrapes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="templates">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Templates</p>
+          <h2>Fill these. Then run the Screen.</h2>
+          <p class="lede">The FAQ tab stays empty when those answers are not in the deck text layer. Download, replace the brackets, export as selectable-text PDF, attach with the deck, and re-run.</p>
+        </div>
+        <p class="hero-actions">
+          <a class="btn btn-primary" href="templates/WorkupIQ_Templates.zip" download>Download all templates (.zip)</a>
+        </p>
+        <div class="file-list">
+          <a class="file-row" href="templates/WorkupIQ_Investment_Memo_Template.md" download>
+            <span class="file">Workup.md</span>
+            <span><strong>2-page investment memo</strong> — partner-memo sections plus TAM, unit-economics, and competitive tables.</span>
+            <span class="file-dl">Download</span>
+          </a>
+          <a class="file-row" href="templates/WorkupIQ_RedTeam_FAQ_Template.md" download>
+            <span class="file">FAQ.md</span>
+            <span><strong>Red-team diligence Q&amp;A</strong> — Q1–Q8: moat, margins, CAC, burn, regulatory path, POV conversion, cap table.</span>
+            <span class="file-dl">Download</span>
+          </a>
+          <a class="file-row" href="templates/WorkupIQ_Appendix_Tables_Template.md" download>
+            <span class="file">Hygiene.md</span>
+            <span><strong>Appendix tables</strong> — one raw table per chart so numbers survive flattening.</span>
+            <span class="file-dl">Download</span>
+          </a>
+          <a class="file-row" href="templates/WorkupIQ_RedTeam_Prompts.md" download>
+            <span class="file">Attack.md</span>
+            <span><strong>Four red-team prompts</strong> — Gatekeeper, wrapper test, financial forensic, IC pre-mortem.</span>
+            <span class="file-dl">Download</span>
+          </a>
+          <a class="file-row" href="templates/WorkupIQ_Email_Blurb_Template.md" download>
+            <span class="file">Inbox.md</span>
+            <span><strong>Email blurb</strong> — plaintext body and the three-file attachment order.</span>
+            <span class="file-dl">Download</span>
+          </a>
+          <a class="file-row" href="templates/WorkupIQ_Notion_Data_Room_Index.md" download>
+            <span class="file">Index.md</span>
+            <span><strong>Notion master index</strong> — 00–06 tree an associate can scan in under 90 seconds.</span>
+            <span class="file-dl">Download</span>
+          </a>
         </div>
       </div>
     </section>
@@ -314,8 +312,11 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p><strong>WorkupIQ</strong> · Extracted. Attacked. Packed.</p>
-      <p>
+      <div class="footer-brand">
+        <p><strong>WorkupIQ</strong></p>
+        <p>Extracted. Attacked. Packed.</p>
+      </div>
+      <p class="footer-links">
         <a href="mentor.html">Mentor</a>
         · <a href="app.html">Screen</a>
         · <a href="https://calendly.com/workupiq/consultation" target="_blank" rel="noopener noreferrer">Book 30 min</a>

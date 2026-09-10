@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WorkupIQ Mentor — Screen, checklist, and a 30-minute 1:1</title>
   <meta name="description" content="Four WorkupIQ offers: a free Screen, a scored Gatekeeper Checklist, a free 30-minute consult on your verdict, and a paid diligence packet if the raise is live." />
-  <meta name="theme-color" content="#14110e" />
+  <meta name="theme-color" content="#141210" />
   <link rel="canonical" href="https://workupiq.com/mentor.html" />
 
   <meta property="og:type" content="website" />
@@ -20,8 +20,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260910c" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -40,7 +40,7 @@
         <a href="index.html#screen">Screen</a>
         <a href="index.html#pack">Pack</a>
         <a href="mentor.html" aria-current="page">Mentor</a>
-        <a href="app.html">Screen a deck</a>
+        <a href="app.html">Open Screen</a>
         <a href="#book" class="nav-cta">Book 30 min</a>
       </nav>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileNav" id="menuBtn">Menu</button>
@@ -50,7 +50,7 @@
       <a href="index.html#screen">Screen</a>
       <a href="index.html#pack">Pack</a>
       <a href="mentor.html" aria-current="page">Mentor</a>
-      <a href="app.html">Screen a deck</a>
+      <a href="app.html">Open Screen</a>
       <a href="#book">Book 30 min</a>
     </div>
   </header>
@@ -72,7 +72,9 @@
           <p class="fine">Pre-seed to Series A. Built for funds that already paste PDFs into Claude. Not slide design. Not investor matching.</p>
         </div>
 
-        <aside class="doc" aria-label="How the four offers sequence">
+        <div class="doc-stack">
+          <div class="doc-sheet" aria-hidden="true"></div>
+          <aside class="doc" aria-label="How the four offers sequence">
           <div class="doc-bar">
             <span>WorkupIQ_Offers.md</span>
             <span class="pill pill-advance">Start free</span>
@@ -87,7 +89,8 @@
               <li><strong>Go deeper if the raise is live</strong> — paid. Investor Due Diligence Prep builds the leave-behind. A monthly retainer keeps it current.</li>
             </ol>
           </div>
-        </aside>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -259,8 +262,11 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p><strong>WorkupIQ</strong> · Extracted. Attacked. Packed.</p>
-      <p>
+      <div class="footer-brand">
+        <p><strong>WorkupIQ</strong></p>
+        <p>Extracted. Attacked. Packed.</p>
+      </div>
+      <p class="footer-links">
         <a href="index.html">Home</a>
         · <a href="mentor.html">Mentor</a>
         · <a href="app.html">Screen</a>
