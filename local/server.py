@@ -347,11 +347,12 @@ def models():
         or request.args.get("key")
         or ""
     )
+    base_url = (request.args.get("base_url") or "").strip() or None
     if live:
-        block = fetch_provider(provider, api_key or None)
+        block = fetch_provider(provider, api_key or None, base_url)
     else:
         cache = load_cache()
-        block = cache.get(provider) or fetch_provider(provider, api_key or None)
+        block = cache.get(provider) or fetch_provider(provider, api_key or None, base_url)
     models = block.get("models") or []
     # Always pin known free routers first.
     pinned = [m for m in models if m.get("id") in {"openrouter/free"}]

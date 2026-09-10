@@ -18,14 +18,15 @@
   const modelStatus = $("modelStatus");
   const keyHint = $("keyHint");
   const refreshBtn = $("refreshModels");
+  const modelFilter = $("modelFilter");
 
   const PRESETS = {
-    openrouter: { model: "openrouter/free", baseUrl: "https://openrouter.ai/api/v1", hint: "Free OpenRouter models are listed first. openrouter/free routes across the free pool." },
+    openrouter: { model: "openrouter/free", baseUrl: "https://openrouter.ai/api/v1", hint: "Full OpenRouter catalog, free variants first. Type in Filter catalog to search. openrouter/free routes across the free pool." },
     nvidia: { model: "meta/llama-3.1-8b-instruct", baseUrl: "https://integrate.api.nvidia.com/v1", hint: "NVIDIA NIM key from build.nvidia.com. Trial / smaller models are sorted first." },
     grok: { model: "grok-4.6", baseUrl: "https://api.x.ai/v1", hint: "xAI key from console.x.ai. Grok models are paid." },
     openai: { model: "gpt-4o-mini", baseUrl: "https://api.openai.com/v1", hint: "Key goes to api.openai.com via the local proxy only." },
-    anthropic: { model: "claude-sonnet-4-20250514", baseUrl: "https://api.anthropic.com", hint: "Key goes to api.anthropic.com via the local proxy only." },
-    gemini: { model: "gemini-2.0-flash", baseUrl: "https://generativelanguage.googleapis.com", hint: "Google AI Studio key. Sent only to Google via the local proxy." },
+    anthropic: { model: "claude-sonnet-4-5", baseUrl: "https://api.anthropic.com", hint: "Paste your Anthropic key, then Refresh models for the live Claude catalog." },
+    gemini: { model: "gemini-2.5-flash", baseUrl: "https://generativelanguage.googleapis.com", hint: "Google AI Studio key. Refresh models lists every generateContent model on that key." },
     ollama: { model: "llama3.1", baseUrl: "http://127.0.0.1:11434/v1", hint: "No key. Requires Ollama running locally." },
     custom: { model: "local-model", baseUrl: "http://127.0.0.1:1234/v1", hint: "Any OpenAI-compatible server on this machine." },
   };
@@ -47,9 +48,12 @@
   let filename = "";
   let pack = null;
   let activeTab = "verdict";
+  let catalogModels = [];
+  let catalogMeta = { source: "", free_count: 0 };
 
   providerEl.addEventListener("change", () => {
     applyPreset(true);
+    if (modelFilter) modelFilter.value = "";
     loadModels(true);
   });
   modelSelect.addEventListener("change", () => {
@@ -61,6 +65,9 @@
     el.addEventListener("input", persist);
   });
   refreshBtn.addEventListener("click", () => loadModels(true));
+  if (modelFilter) {
+    modelFilter.addEventListener("input", () => renderModelSelect(modelEl.value));
+  }
 
   drop.addEventListener("click", () => fileEl.click());
   drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("drag"); });
@@ -142,46 +149,100 @@
     return opt;
   }
 
+  function filteredCatalog() {
+    const q = (modelFilter && modelFilter.value || "").trim().toLowerCase();
+    if (!q) return catalogModels;
+    return catalogModels.filter((m) => {
+      const hay = ((m.id || "") + " " + (m.name || "")).toLowerCase();
+      return hay.includes(q);
+    });
+  }
+
+  function renderModelSelect(wanted) {
+    modelSelect.innerHTML = "";
+    const models = filteredCatalog();
+    const free = models.filter((m) => m.free);
+    const paid = models.filter((m) => !m.free);
+    if (free.length) {
+      const group = document.createElement("optgroup");
+      group.label = "Free / $0";
+      free.forEach((m) => group.appendChild(optionFor(m)));
+      modelSelect.appendChild(group);
+    }
+    if (paid.length) {
+      const group = document.createElement("optgroup");
+      group.label = "Paid";
+      paid.forEach((m) => group.appendChild(optionFor(m)));
+      modelSelect.appendChild(group);
+    }
+    if (!models.length) {
+      modelSelect.appendChild(optionFor({ id: wanted || modelEl.value || "custom", free: false }));
+    }
+    const ids = models.map((m) => m.id);
+    if (wanted && ids.includes(wanted)) modelSelect.value = wanted;
+    else if (models[0]) {
+      modelSelect.value = models[0].id;
+      if (!wanted) modelEl.value = models[0].id;
+    }
+    const shown = models.length;
+    const total = catalogModels.length;
+    const freeCount = catalogMeta.free_count || catalogModels.filter((m) => m.free).length;
+    const source = catalogMeta.source || "unknown";
+    modelStatus.textContent = (shown === total ? shown : shown + " / " + total) + " models · " + freeCount + " free · source " + source;
+  }
+
+  async function snapshotCatalog(provider) {
+    const res = await fetch("models.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("no snapshot");
+    const catalog = await res.json();
+    const block = catalog[provider] || {};
+    return {
+      models: block.models || [],
+      source: "snapshot",
+      free_count: (block.models || []).filter((m) => m.free).length,
+    };
+  }
+
   async function loadModels(live) {
     modelStatus.textContent = "Loading catalog…";
     modelSelect.innerHTML = "";
+    const provider = providerEl.value;
     try {
       const headers = {};
       if (apiKeyEl.value) headers["X-API-Key"] = apiKeyEl.value;
-      const res = await fetch("/api/models?provider=" + encodeURIComponent(providerEl.value) + "&live=" + (live ? "1" : "0"), { headers });
+      const params = new URLSearchParams({
+        provider: provider,
+        live: live ? "1" : "0",
+      });
+      if (baseUrlEl.value) params.set("base_url", baseUrlEl.value);
+      const res = await fetch("/api/models?" + params.toString(), { headers });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "catalog failed");
-      const models = data.models || [];
-      const free = models.filter((m) => m.free);
-      const paid = models.filter((m) => !m.free);
-      if (free.length) {
-        const group = document.createElement("optgroup");
-        group.label = "Free / $0";
-        free.forEach((m) => group.appendChild(optionFor(m)));
-        modelSelect.appendChild(group);
-      }
-      if (paid.length) {
-        const group = document.createElement("optgroup");
-        group.label = "Paid";
-        paid.forEach((m) => group.appendChild(optionFor(m)));
-        modelSelect.appendChild(group);
-      }
-      if (!models.length) {
-        modelSelect.appendChild(optionFor({ id: modelEl.value || "custom", free: false }));
-      }
+      catalogModels = data.models || [];
+      catalogMeta = { source: data.source || "unknown", free_count: data.free_count || 0 };
+      if (data.error) catalogMeta.source += " (" + data.error + ")";
       const wanted = modelEl.value;
-      const ids = models.map((m) => m.id);
-      if (wanted && ids.includes(wanted)) modelSelect.value = wanted;
-      else if (models[0]) {
-        modelSelect.value = models[0].id;
-        modelEl.value = models[0].id;
+      const ids = catalogModels.map((m) => m.id);
+      if (wanted && !ids.includes(wanted) && catalogModels[0]) {
+        modelEl.value = catalogModels[0].id;
       }
-      modelStatus.textContent = models.length + " models · " + (data.free_count || free.length) + " free · source " + (data.source || "unknown");
+      renderModelSelect(modelEl.value);
       persist();
     } catch (err) {
-      modelStatus.textContent = "Catalog fallback: " + (err.message || err);
-      const preset = PRESETS[providerEl.value] || {};
-      modelSelect.appendChild(optionFor({ id: modelEl.value || preset.model || "custom", free: providerEl.value === "openrouter" }));
+      try {
+        const snap = await snapshotCatalog(provider);
+        catalogModels = snap.models;
+        catalogMeta = { source: "snapshot", free_count: snap.free_count };
+        renderModelSelect(modelEl.value);
+        modelStatus.textContent += " · live catalog unavailable (" + (err.message || err) + ")";
+        persist();
+      } catch {
+        catalogModels = [];
+        catalogMeta = { source: "fallback", free_count: 0 };
+        const preset = PRESETS[provider] || {};
+        modelSelect.appendChild(optionFor({ id: modelEl.value || preset.model || "custom", free: provider === "openrouter" }));
+        modelStatus.textContent = "Catalog fallback: " + (err.message || err);
+      }
     }
   }
 

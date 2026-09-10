@@ -4,16 +4,171 @@
     "source": "live",
     "models": [
       {
+        "id": "openrouter/free",
+        "free": true,
+        "name": "Free Models Router"
+      },
+      {
+        "id": "alibaba/happyhorse-1.0",
+        "name": "Alibaba: HappyHorse 1.0",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "alibaba/happyhorse-1.1",
+        "name": "Alibaba: HappyHorse 1.1",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "alibaba/wan-2.6",
+        "name": "Alibaba: Wan 2.6",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "alibaba/wan-2.7",
+        "name": "Alibaba: Wan 2.7",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "alibaba/wan-3.0",
+        "name": "Alibaba: Wan 3.0",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "alibaba/wan-3.0-prime",
+        "name": "Alibaba: Wan 3.0 Prime",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "black-forest-labs/flux-3-video",
+        "name": "Black Forest Labs: FLUX.3 Video",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "black-forest-labs/flux-video-upscale",
+        "name": "Black Forest Labs: FLUX Video Upscale",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "black-forest-labs/flux.2-flex",
+        "name": "Black Forest Labs: FLUX.2 Flex",
+        "free": true,
+        "context": 67344
+      },
+      {
+        "id": "black-forest-labs/flux.2-klein-4b",
+        "name": "Black Forest Labs: FLUX.2 Klein 4B",
+        "free": true,
+        "context": 40960
+      },
+      {
+        "id": "black-forest-labs/flux.2-max",
+        "name": "Black Forest Labs: FLUX.2 Max",
+        "free": true,
+        "context": 46864
+      },
+      {
+        "id": "black-forest-labs/flux.2-pro",
+        "name": "Black Forest Labs: FLUX.2 Pro",
+        "free": true,
+        "context": 46864
+      },
+      {
+        "id": "bytedance-seed/seedream-4.5",
+        "name": "ByteDance Seed: Seedream 4.5",
+        "free": true,
+        "context": 4096
+      },
+      {
+        "id": "bytedance-seed/seedream-5-0-lite",
+        "name": "ByteDance Seed: Seedream 5.0 Lite",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "bytedance-seed/seedream-5-0-pro",
+        "name": "ByteDance Seed: Seedream 5.0 Pro",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "bytedance/seedance-1-5-pro",
+        "name": "ByteDance: Seedance 1.5 Pro",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "bytedance/seedance-2.0",
+        "name": "ByteDance: Seedance 2.0",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "bytedance/seedance-2.0-fast",
+        "name": "ByteDance: Seedance 2.0 Fast",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "bytedance/seedance-2.0-mini",
+        "name": "ByteDance: Seedance 2.0 Mini",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "bytedance/seedance-2.5",
+        "name": "ByteDance: Seedance 2.5",
+        "free": true,
+        "context": null
+      },
+      {
         "id": "cohere/north-mini-code:free",
         "name": "Cohere: North Mini Code (free)",
         "free": true,
         "context": 256000
       },
       {
+        "id": "cohere/rerank-4-fast",
+        "name": "Cohere: Rerank 4 Fast",
+        "free": true,
+        "context": 32768
+      },
+      {
+        "id": "cohere/rerank-4-pro",
+        "name": "Cohere: Rerank 4 Pro",
+        "free": true,
+        "context": 32768
+      },
+      {
+        "id": "cohere/rerank-v3.5",
+        "name": "Cohere: Rerank v3.5",
+        "free": true,
+        "context": 4096
+      },
+      {
+        "id": "deepgram/flux-tts:free",
+        "name": "Deepgram: Flux TTS (free)",
+        "free": true,
+        "context": null
+      },
+      {
         "id": "dots-studio/dots-3-note-preview:free",
         "name": "Dots Studio: Dots3-Note Preview (free)",
         "free": true,
         "context": 512000
+      },
+      {
+        "id": "fish-audio/s2.1-pro-free:free",
+        "name": "Fish Audio: S2.1 Pro Free (free)",
+        "free": true,
+        "context": null
       },
       {
         "id": "google/gemma-4-26b-a4b-it:free",
@@ -40,22 +195,142 @@
         "context": 1048576
       },
       {
+        "id": "google/veo-3.1",
+        "name": "Google: Veo 3.1",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "google/veo-3.1-fast",
+        "name": "Google: Veo 3.1 Fast",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "google/veo-3.1-lite",
+        "name": "Google: Veo 3.1 Lite",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "heygen/avatar-iv",
+        "name": "HeyGen: Avatar IV",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "inclusionai/ling-3.0-flash-fin:free",
+        "name": "inclusionAI: Ling 3.0 Flash Fin (free)",
+        "free": true,
+        "context": 262144
+      },
+      {
+        "id": "inclusionai/ling-3.0-flash-sante:free",
+        "name": "inclusionAI: Ling 3.0 Flash Sante (free)",
+        "free": true,
+        "context": 262144
+      },
+      {
+        "id": "krea/krea-2-large",
+        "name": "Krea: Krea 2 Large",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "krea/krea-2-medium",
+        "name": "Krea: Krea 2 Medium",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "krea/krea-2-medium-turbo",
+        "name": "Krea: Krea 2 Medium Turbo",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "kwaivgi/kling-v3.0-pro",
+        "name": "Kling: Video v3.0 Pro",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "kwaivgi/kling-v3.0-std",
+        "name": "Kling: Video v3.0 Standard",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "kwaivgi/kling-video-o1",
+        "name": "Kling: Video O1",
+        "free": true,
+        "context": null
+      },
+      {
         "id": "liquid/lfm-2.5-2.6b:free",
         "name": "LiquidAI: LFM2.5-2.6B (free)",
         "free": true,
         "context": 65536
       },
       {
-        "id": "minimax/minimax-m2.7:free",
-        "name": "MiniMax: MiniMax M2.7 (free)",
+        "id": "liquid/lfm-2.5-embedding-350m:free",
+        "name": "LiquidAI: LFM2.5-Embedding-350M (free)",
         "free": true,
-        "context": 196608
+        "context": 512
       },
       {
-        "id": "minimax/minimax-m3:free",
-        "name": "MiniMax: MiniMax M3 (free)",
+        "id": "meta/muse-image",
+        "name": "Meta: Muse Image",
         "free": true,
-        "context": 1048576
+        "context": 65536
+      },
+      {
+        "id": "minimax/hailuo-2.3",
+        "name": "MiniMax: Hailuo 2.3",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "minimax/hailuo-3",
+        "name": "MiniMax: H3",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "minimax/hailuo-3-max",
+        "name": "MiniMax: H3 Max",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "nex-agi/nex-n2.5-mini:free",
+        "name": "Nex AGI: Nex-N2.5-Mini (free)",
+        "free": true,
+        "context": 262144
+      },
+      {
+        "id": "nex-agi/nex-n2.5-pro:free",
+        "name": "Nex AGI: Nex-N2.5-Pro (free)",
+        "free": true,
+        "context": 262144
+      },
+      {
+        "id": "nvidia/llama-nemotron-embed-vl-1b-v2:free",
+        "name": "NVIDIA: Llama Nemotron Embed VL 1B V2 (free)",
+        "free": true,
+        "context": 131072
+      },
+      {
+        "id": "nvidia/llama-nemotron-rerank-vl-1b-v2:free",
+        "name": "NVIDIA: Llama Nemotron Rerank VL 1B V2 (free)",
+        "free": true,
+        "context": 10240
+      },
+      {
+        "id": "nvidia/nemotron-3-embed-1b:free",
+        "name": "NVIDIA: Nemotron 3 Embed 1B (free)",
+        "free": true,
+        "context": 32768
       },
       {
         "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -88,10 +363,10 @@
         "context": 1000000
       },
       {
-        "id": "openrouter/free",
-        "name": "Free Models Router",
+        "id": "openai/sora-2-pro",
+        "name": "OpenAI: Sora 2 Pro",
         "free": true,
-        "context": 200000
+        "context": null
       },
       {
         "id": "poolside/laguna-s-2.1:free",
@@ -106,10 +381,148 @@
         "context": 262144
       },
       {
-        "id": "stealth/ox-alpha",
-        "name": "Ox Alpha",
+        "id": "qwen/qwen-image-3",
+        "name": "Qwen: Qwen Image 3",
         "free": true,
-        "context": 1048576
+        "context": 65536
+      },
+      {
+        "id": "qwen/qwen-image-3-pro",
+        "name": "Qwen: Qwen Image 3 Pro",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "qwen/qwen3-reranker-8b",
+        "name": "Qwen3 Reranker 8B",
+        "free": true,
+        "context": 40960
+      },
+      {
+        "id": "recraft/recraft-v3",
+        "name": "Recraft: Recraft V3",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4",
+        "name": "Recraft: Recraft V4",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4-pro",
+        "name": "Recraft: Recraft V4 Pro",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4-pro-vector",
+        "name": "Recraft: Recraft V4 Pro Vector",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4-styles",
+        "name": "Recraft: Recraft V4 Styles",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4-styles-pro",
+        "name": "Recraft: Recraft V4 Styles Pro",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4-styles-pro-vector",
+        "name": "Recraft: Recraft V4 Styles Pro Vector",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4-styles-vector",
+        "name": "Recraft: Recraft V4 Styles Vector",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4-vector",
+        "name": "Recraft: Recraft V4 Vector",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4.1",
+        "name": "Recraft: Recraft V4.1",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4.1-pro",
+        "name": "Recraft: Recraft V4.1 Pro",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4.1-pro-vector",
+        "name": "Recraft: Recraft V4.1 Pro Vector",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4.1-utility",
+        "name": "Recraft: Recraft V4.1 Utility",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4.1-utility-pro",
+        "name": "Recraft: Recraft V4.1 Utility Pro",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "recraft/recraft-v4.1-vector",
+        "name": "Recraft: Recraft V4.1 Vector",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "runway/aleph-2",
+        "name": "Runway: Aleph 2.0",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "runway/gen-4.5",
+        "name": "Runway: Gen-4.5",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "sourceful/riverflow-v2-fast",
+        "name": "Sourceful: Riverflow V2 Fast",
+        "free": true,
+        "context": 8192
+      },
+      {
+        "id": "sourceful/riverflow-v2-pro",
+        "name": "Sourceful: Riverflow V2 Pro",
+        "free": true,
+        "context": 8192
+      },
+      {
+        "id": "sourceful/riverflow-v2.5-fast",
+        "name": "Sourceful: Riverflow V2.5 Fast",
+        "free": true,
+        "context": 32768
+      },
+      {
+        "id": "sourceful/riverflow-v2.5-pro",
+        "name": "Sourceful: Riverflow V2.5 Pro",
+        "free": true,
+        "context": 32768
       },
       {
         "id": "thinkingmachines/inkling-small:free",
@@ -124,10 +537,40 @@
         "context": 1048576
       },
       {
-        "id": "z-ai/glm-5.2:free",
-        "name": "Z.ai: GLM 5.2 (free)",
+        "id": "voyageai/rerank-2.5",
+        "name": "VoyageAI by MongoDB: rerank-2.5",
         "free": true,
-        "context": 256000
+        "context": 32000
+      },
+      {
+        "id": "voyageai/rerank-2.5-lite",
+        "name": "VoyageAI by MongoDB: rerank-2.5-lite",
+        "free": true,
+        "context": 32000
+      },
+      {
+        "id": "x-ai/grok-imagine-image-2.0",
+        "name": "xAI: Grok Imagine Image 2.0",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "x-ai/grok-imagine-image-quality",
+        "name": "SpaceXAI: Grok Imagine Image Quality",
+        "free": true,
+        "context": 65536
+      },
+      {
+        "id": "x-ai/grok-imagine-video",
+        "name": "SpaceXAI: Grok Imagine Video",
+        "free": true,
+        "context": null
+      },
+      {
+        "id": "x-ai/grok-imagine-video-1.5",
+        "name": "SpaceXAI: Grok Imagine Video 1.5",
+        "free": true,
+        "context": null
       },
       {
         "id": "aion-labs/aion-2.0",
@@ -152,12 +595,6 @@
         "name": "AionLabs: Aion-RP 1.0 (8B)",
         "free": false,
         "context": 32768
-      },
-      {
-        "id": "allenai/olmo-3-32b-think",
-        "name": "AllenAI: Olmo 3 32B Think",
-        "free": false,
-        "context": 65536
       },
       {
         "id": "amazon/nova-2-lite-v1",
@@ -204,6 +641,18 @@
       {
         "id": "anthropic/claude-fable-5",
         "name": "Anthropic: Claude Fable 5",
+        "free": false,
+        "context": 1000000
+      },
+      {
+        "id": "anthropic/claude-fable-5.1",
+        "name": "Anthropic: Claude Fable 5.1",
+        "free": false,
+        "context": 1000000
+      },
+      {
+        "id": "anthropic/claude-fable-5.1:batch",
+        "name": "Anthropic: Claude Fable 5.1 (batch)",
         "free": false,
         "context": 1000000
       },
@@ -274,12 +723,6 @@
         "context": 1000000
       },
       {
-        "id": "anthropic/claude-opus-4.7-fast",
-        "name": "Anthropic: Claude Opus 4.7 (Fast)",
-        "free": false,
-        "context": 1000000
-      },
-      {
         "id": "anthropic/claude-opus-4.7:batch",
         "name": "Anthropic: Claude Opus 4.7 (batch)",
         "free": false,
@@ -292,12 +735,6 @@
         "context": 1000000
       },
       {
-        "id": "anthropic/claude-opus-4.8-fast",
-        "name": "Anthropic: Claude Opus 4.8 (Fast)",
-        "free": false,
-        "context": 1000000
-      },
-      {
         "id": "anthropic/claude-opus-4.8:batch",
         "name": "Anthropic: Claude Opus 4.8 (batch)",
         "free": false,
@@ -306,12 +743,6 @@
       {
         "id": "anthropic/claude-opus-5",
         "name": "Claude Opus 5",
-        "free": false,
-        "context": 1000000
-      },
-      {
-        "id": "anthropic/claude-opus-5-fast",
-        "name": "Claude Opus 5 (Fast)",
         "free": false,
         "context": 1000000
       },
@@ -370,10 +801,22 @@
         "context": 262144
       },
       {
-        "id": "arcee-ai/virtuoso-large",
-        "name": "Arcee AI: Virtuoso Large",
+        "id": "baai/bge-base-en-v1.5",
+        "name": "BAAI: bge-base-en-v1.5",
         "free": false,
-        "context": 131072
+        "context": 512
+      },
+      {
+        "id": "baai/bge-large-en-v1.5",
+        "name": "BAAI: bge-large-en-v1.5",
+        "free": false,
+        "context": 512
+      },
+      {
+        "id": "baai/bge-m3",
+        "name": "BAAI: bge-m3",
+        "free": false,
+        "context": 8194
       },
       {
         "id": "baidu/ernie-4.5-vl-424b-a47b",
@@ -424,6 +867,12 @@
         "context": 128000
       },
       {
+        "id": "canopylabs/orpheus-3b-0.1-ft",
+        "name": "Canopy Labs: Orpheus 3B",
+        "free": false,
+        "context": 4096
+      },
+      {
         "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition",
         "name": "Venice: Uncensored",
         "free": false,
@@ -452,6 +901,18 @@
         "name": "Cohere: Command R7B (12-2024)",
         "free": false,
         "context": 128000
+      },
+      {
+        "id": "deepgram/aura-2",
+        "name": "Deepgram: Aura-2",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "deepgram/nova-3",
+        "name": "Deepgram: Nova-3",
+        "free": false,
+        "context": null
       },
       {
         "id": "deepseek/deepseek-chat",
@@ -520,8 +981,20 @@
         "context": 1310720
       },
       {
+        "id": "deepseek/deepseek-v4-flash-0731:batch",
+        "name": "DeepSeek: DeepSeek V4 Flash 0731 (batch)",
+        "free": false,
+        "context": 1048576
+      },
+      {
         "id": "deepseek/deepseek-v4-flash-vision-exp",
         "name": "DeepSeek: DeepSeek V4 Flash Vision Exp",
+        "free": false,
+        "context": 1048576
+      },
+      {
+        "id": "deepseek/deepseek-v4-flash-vision-exp:batch",
+        "name": "DeepSeek: DeepSeek V4 Flash Vision Exp (batch)",
         "free": false,
         "context": 1048576
       },
@@ -536,6 +1009,48 @@
         "name": "DeepSeek: DeepSeek V4 Pro 0813",
         "free": false,
         "context": 1048576
+      },
+      {
+        "id": "deepseek/deepseek-v4-pro-0813:batch",
+        "name": "DeepSeek: DeepSeek V4 Pro 0813 (batch)",
+        "free": false,
+        "context": 1048576
+      },
+      {
+        "id": "deepseek/deepseek-v4.1-flash",
+        "name": "DeepSeek: DeepSeek V4.1 Flash",
+        "free": false,
+        "context": 1048576
+      },
+      {
+        "id": "fish-audio/s1",
+        "name": "Fish Audio: S1",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "fish-audio/s2-pro",
+        "name": "Fish Audio: S2 Pro",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "fish-audio/s2.1-pro",
+        "name": "Fish Audio: S2.1 Pro",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "fish-audio/transcribe-1",
+        "name": "Fish Audio: Transcribe 1",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "google/chirp-3",
+        "name": "Google: Chirp 3",
+        "free": false,
+        "context": null
       },
       {
         "id": "google/gemini-2.5-flash",
@@ -652,6 +1167,12 @@
         "context": 1048576
       },
       {
+        "id": "google/gemini-3.1-flash-tts-preview",
+        "name": "Google: Gemini 3.1 Flash TTS Preview",
+        "free": false,
+        "context": 32768
+      },
+      {
         "id": "google/gemini-3.1-pro-preview",
         "name": "Google: Gemini 3.1 Pro Preview",
         "free": false,
@@ -718,6 +1239,42 @@
         "context": 1048576
       },
       {
+        "id": "google/gemini-3.8-flash",
+        "name": "Google: Gemini 3.8 Flash",
+        "free": false,
+        "context": 1048576
+      },
+      {
+        "id": "google/gemini-3.8-flash:batch",
+        "name": "Google: Gemini 3.8 Flash (batch)",
+        "free": false,
+        "context": 1048576
+      },
+      {
+        "id": "google/gemini-embedding-001",
+        "name": "Google: Gemini Embedding 001",
+        "free": false,
+        "context": 20000
+      },
+      {
+        "id": "google/gemini-embedding-2",
+        "name": "Google: Gemini Embedding 2",
+        "free": false,
+        "context": 8192
+      },
+      {
+        "id": "google/gemini-embedding-2-preview",
+        "name": "Google: Gemini Embedding 2 Preview",
+        "free": false,
+        "context": 8192
+      },
+      {
+        "id": "google/gemini-embedding-2:batch",
+        "name": "Google: Gemini Embedding 2 (batch)",
+        "free": false,
+        "context": 8192
+      },
+      {
         "id": "google/gemma-2-27b-it",
         "name": "Google: Gemma 2 27B",
         "free": false,
@@ -733,19 +1290,13 @@
         "id": "google/gemma-3-27b-it",
         "name": "Google: Gemma 3 27B",
         "free": false,
-        "context": 262144
+        "context": 131072
       },
       {
         "id": "google/gemma-3-4b-it",
         "name": "Google: Gemma 3 4B",
         "free": false,
         "context": 131072
-      },
-      {
-        "id": "google/gemma-3n-e4b-it",
-        "name": "Google: Gemma 3n 4B",
-        "free": false,
-        "context": 32768
       },
       {
         "id": "google/gemma-4-26b-a4b-it",
@@ -760,10 +1311,22 @@
         "context": 262144
       },
       {
+        "id": "google/gemma-4-31b-it:batch",
+        "name": "Google: Gemma 4 31B (batch)",
+        "free": false,
+        "context": 262144
+      },
+      {
         "id": "gryphe/mythomax-l2-13b",
         "name": "MythoMax 13B",
         "free": false,
         "context": 8192
+      },
+      {
+        "id": "hexgrad/kokoro-82m",
+        "name": "hexgrad: Kokoro 82M",
+        "free": false,
+        "context": 4096
       },
       {
         "id": "ibm-granite/granite-4.0-h-micro",
@@ -772,8 +1335,8 @@
         "context": 131000
       },
       {
-        "id": "ibm-granite/granite-4.1-8b",
-        "name": "IBM: Granite 4.1 8B",
+        "id": "ibm-granite/granite-4.2-8b",
+        "name": "IBM: Granite 4.2 8B",
         "free": false,
         "context": 131072
       },
@@ -784,16 +1347,40 @@
         "context": 128000
       },
       {
+        "id": "inception/mercury-2.5",
+        "name": "Inception: Mercury 2.5",
+        "free": false,
+        "context": 260000
+      },
+      {
         "id": "inclusionai/ling-3.0-flash",
-        "name": "Ling-3.0-flash",
+        "name": "inclusionAI: Ling 3.0 Flash",
         "free": false,
         "context": 262144
       },
       {
-        "id": "kwaipilot/kat-coder-air-v2.5",
-        "name": "Kwaipilot: KAT-Coder-Air V2.5",
+        "id": "inclusionai/ling-3.0-flash-fin",
+        "name": "inclusionAI: Ling 3.0 Flash Fin",
         "free": false,
-        "context": 256000
+        "context": 262144
+      },
+      {
+        "id": "intfloat/e5-base-v2",
+        "name": "Intfloat: E5-Base-v2",
+        "free": false,
+        "context": 512
+      },
+      {
+        "id": "intfloat/e5-large-v2",
+        "name": "Intfloat: E5-Large-v2",
+        "free": false,
+        "context": 512
+      },
+      {
+        "id": "intfloat/multilingual-e5-large",
+        "name": "Intfloat: Multilingual-E5-Large",
+        "free": false,
+        "context": 512
       },
       {
         "id": "kwaipilot/kat-coder-pro-v2",
@@ -805,7 +1392,7 @@
         "id": "kwaipilot/kat-coder-pro-v2.5",
         "name": "Kwaipilot: KAT-Coder-Pro V2.5",
         "free": false,
-        "context": 256000
+        "context": 262144
       },
       {
         "id": "mancer/weaver",
@@ -865,11 +1452,17 @@
         "id": "meta-llama/llama-guard-4-12b",
         "name": "Meta: Llama Guard 4 12B",
         "free": false,
-        "context": 1048576
+        "context": 163840
       },
       {
         "id": "meta/muse-glimmer-30b",
         "name": "Meta: Muse Glimmer 30B",
+        "free": false,
+        "context": 131072
+      },
+      {
+        "id": "meta/muse-glimmer-30b:batch",
+        "name": "Meta: Muse Glimmer 30B (batch)",
         "free": false,
         "context": 131072
       },
@@ -890,6 +1483,66 @@
         "name": "Meta: Muse Spark 1.2 Contributor",
         "free": false,
         "context": 1048576
+      },
+      {
+        "id": "meta/muse-spark-1.3",
+        "name": "Meta: Muse Spark 1.3",
+        "free": false,
+        "context": 1048576
+      },
+      {
+        "id": "meta/muse-spark-1.3-contributor",
+        "name": "Meta: Muse Spark 1.3 Contributor",
+        "free": false,
+        "context": 1048576
+      },
+      {
+        "id": "microsoft/mai-image-2.5",
+        "name": "Microsoft AI: MAI-Image-2.5",
+        "free": false,
+        "context": 4096
+      },
+      {
+        "id": "microsoft/mai-image-2.5-pro",
+        "name": "MicrosoftAI: MAI-Image-2.5 Pro",
+        "free": false,
+        "context": 4096
+      },
+      {
+        "id": "microsoft/mai-image-2.6",
+        "name": "MicrosoftAI: MAI-Image-2.6",
+        "free": false,
+        "context": 4096
+      },
+      {
+        "id": "microsoft/mai-image-2.6-flash",
+        "name": "MicrosoftAI: MAI-Image-2.6 Flash",
+        "free": false,
+        "context": 4096
+      },
+      {
+        "id": "microsoft/mai-transcribe-1.5",
+        "name": "MicrosoftAI: MAI-Transcribe 1.5",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "microsoft/mai-transcribe-2",
+        "name": "MicrosoftAI: MAI-Transcribe 2",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "microsoft/mai-voice-2",
+        "name": "MicrosoftAI: MAI-Voice-2",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "microsoft/mai-voice-2-flash",
+        "name": "MicrosoftAI: MAI-Voice-2-Flash",
+        "free": false,
+        "context": null
       },
       {
         "id": "microsoft/phi-4",
@@ -958,10 +1611,34 @@
         "context": 524288
       },
       {
+        "id": "minimax/speech-2.8-hd",
+        "name": "MiniMax: Speech 2.8 HD",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "minimax/speech-2.8-turbo",
+        "name": "MiniMax: Speech 2.8 Turbo",
+        "free": false,
+        "context": null
+      },
+      {
         "id": "mistralai/codestral-2508",
         "name": "Mistral: Codestral 2508",
         "free": false,
         "context": 256000
+      },
+      {
+        "id": "mistralai/codestral-2508:batch",
+        "name": "Mistral: Codestral 2508 (batch)",
+        "free": false,
+        "context": 256000
+      },
+      {
+        "id": "mistralai/codestral-embed-2505",
+        "name": "Mistral: Codestral Embed 2505",
+        "free": false,
+        "context": 8192
       },
       {
         "id": "mistralai/devstral-2512",
@@ -982,16 +1659,22 @@
         "context": 131072
       },
       {
-        "id": "mistralai/ministral-8b",
-        "name": "Mistral: Ministral 8B",
-        "free": false,
-        "context": 128000
-      },
-      {
         "id": "mistralai/ministral-8b-2512",
         "name": "Mistral: Ministral 3 8B 2512",
         "free": false,
         "context": 262144
+      },
+      {
+        "id": "mistralai/ministral-8b-2512:batch",
+        "name": "Mistral: Ministral 3 8B 2512 (batch)",
+        "free": false,
+        "context": 262144
+      },
+      {
+        "id": "mistralai/mistral-embed-2312",
+        "name": "Mistral: Mistral Embed 2312",
+        "free": false,
+        "context": 8192
       },
       {
         "id": "mistralai/mistral-large",
@@ -1012,6 +1695,12 @@
         "context": 262144
       },
       {
+        "id": "mistralai/mistral-large-2512:batch",
+        "name": "Mistral: Mistral Large 3 2512 (batch)",
+        "free": false,
+        "context": 262144
+      },
+      {
         "id": "mistralai/mistral-medium-3",
         "name": "Mistral: Mistral Medium 3",
         "free": false,
@@ -1024,8 +1713,20 @@
         "context": 262144
       },
       {
+        "id": "mistralai/mistral-medium-3-5:batch",
+        "name": "Mistral: Mistral Medium 3.5 (batch)",
+        "free": false,
+        "context": 262144
+      },
+      {
         "id": "mistralai/mistral-medium-3.1",
         "name": "Mistral: Mistral Medium 3.1",
+        "free": false,
+        "context": 131072
+      },
+      {
+        "id": "mistralai/mistral-medium-3.1:batch",
+        "name": "Mistral: Mistral Medium 3.1 (batch)",
         "free": false,
         "context": 131072
       },
@@ -1054,6 +1755,12 @@
         "context": 262144
       },
       {
+        "id": "mistralai/mistral-small-2603:batch",
+        "name": "Mistral: Mistral Small 4 (batch)",
+        "free": false,
+        "context": 262144
+      },
+      {
         "id": "mistralai/mistral-small-3.1-24b-instruct",
         "name": "Mistral: Mistral Small 3.1 24B",
         "free": false,
@@ -1072,10 +1779,34 @@
         "context": 65536
       },
       {
+        "id": "mistralai/voxtral-mini-3b-2507",
+        "name": "Mistral: Voxtral Mini 3B 2507",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "mistralai/voxtral-mini-transcribe",
+        "name": "Mistral: Voxtral Mini Transcribe",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "mistralai/voxtral-mini-tts-2603",
+        "name": "Mistral: Voxtral Mini TTS",
+        "free": false,
+        "context": 4096
+      },
+      {
         "id": "mistralai/voxtral-small-24b-2507",
         "name": "Mistral: Voxtral Small 24B 2507",
         "free": false,
-        "context": 32000
+        "context": 32768
+      },
+      {
+        "id": "mistralai/voxtral-small-24b-2507-stt",
+        "name": "Mistral: Voxtral Small 24B 2507 STT",
+        "free": false,
+        "context": null
       },
       {
         "id": "moonshotai/kimi-k2",
@@ -1114,14 +1845,14 @@
         "context": 262144
       },
       {
-        "id": "moonshotai/kimi-k2.7-code:batch",
-        "name": "MoonshotAI: Kimi K2.7 Code (batch)",
-        "free": false,
-        "context": 262144
-      },
-      {
         "id": "moonshotai/kimi-k3",
         "name": "MoonshotAI: Kimi K3",
+        "free": false,
+        "context": 1048576
+      },
+      {
+        "id": "moonshotai/kimi-k3:batch",
+        "name": "MoonshotAI: Kimi K3 (batch)",
         "free": false,
         "context": 1048576
       },
@@ -1134,18 +1865,6 @@
       {
         "id": "morph/morph-v3-large",
         "name": "Morph: Morph V3 Large",
-        "free": false,
-        "context": 262144
-      },
-      {
-        "id": "nex-agi/nex-n2-mini",
-        "name": "Nex AGI: Nex-N2-Mini",
-        "free": false,
-        "context": 262144
-      },
-      {
-        "id": "nex-agi/nex-n2-pro",
-        "name": "Nex AGI: Nex-N2-Pro",
         "free": false,
         "context": 262144
       },
@@ -1168,12 +1887,6 @@
         "context": 131072
       },
       {
-        "id": "nousresearch/hermes-4-70b",
-        "name": "Nous: Hermes 4 70B",
-        "free": false,
-        "context": 131072
-      },
-      {
         "id": "nvidia/nemotron-3-nano-30b-a3b",
         "name": "NVIDIA: Nemotron 3 Nano 30B A3B",
         "free": false,
@@ -1183,25 +1896,37 @@
         "id": "nvidia/nemotron-3-super-120b-a12b",
         "name": "NVIDIA: Nemotron 3 Super",
         "free": false,
-        "context": 1000000
+        "context": 262144
       },
       {
         "id": "nvidia/nemotron-3-ultra-550b-a55b",
         "name": "NVIDIA: Nemotron 3 Ultra",
         "free": false,
-        "context": 512288
+        "context": 262144
       },
       {
-        "id": "nvidia/nemotron-3-ultra-550b-a55b:batch",
-        "name": "NVIDIA: Nemotron 3 Ultra (batch)",
+        "id": "nvidia/nemotron-3.5-asr-streaming-multilingual-0.6b",
+        "name": "NVIDIA: Nemotron 3.5 ASR Streaming Multilingual 0.6B",
         "free": false,
-        "context": 512288
+        "context": null
+      },
+      {
+        "id": "nvidia/nemotron-3.5-content-safety",
+        "name": "NVIDIA: Nemotron 3.5 Content Safety",
+        "free": false,
+        "context": 131072
       },
       {
         "id": "nvidia/nemotron-3.5-lightning",
         "name": "NVIDIA: Nemotron 3.5 Lightning",
         "free": false,
         "context": 262144
+      },
+      {
+        "id": "nvidia/parakeet-tdt-0.6b-v3",
+        "name": "NVIDIA: Parakeet TDT 0.6B v3",
+        "free": false,
+        "context": null
       },
       {
         "id": "openai/gpt-3.5-turbo",
@@ -1330,8 +2055,20 @@
         "context": 128000
       },
       {
+        "id": "openai/gpt-4o-mini-transcribe",
+        "name": "OpenAI: GPT-4o Mini Transcribe",
+        "free": false,
+        "context": 128000
+      },
+      {
         "id": "openai/gpt-4o-mini:batch",
         "name": "OpenAI: GPT-4o-mini (batch)",
+        "free": false,
+        "context": 128000
+      },
+      {
+        "id": "openai/gpt-4o-transcribe",
+        "name": "OpenAI: GPT-4o Transcribe",
         "free": false,
         "context": 128000
       },
@@ -1344,12 +2081,6 @@
       {
         "id": "openai/gpt-5",
         "name": "OpenAI: GPT-5",
-        "free": false,
-        "context": 400000
-      },
-      {
-        "id": "openai/gpt-5-codex:batch",
-        "name": "OpenAI: GPT-5 Codex (batch)",
         "free": false,
         "context": 400000
       },
@@ -1630,6 +2361,30 @@
         "context": 400000
       },
       {
+        "id": "openai/gpt-6-astra",
+        "name": "OpenAI: GPT-6 Astra",
+        "free": false,
+        "context": 1050000
+      },
+      {
+        "id": "openai/gpt-6-astra-pro",
+        "name": "OpenAI: GPT-6 Astra Pro",
+        "free": false,
+        "context": 1050000
+      },
+      {
+        "id": "openai/gpt-6-astra-pro:batch",
+        "name": "OpenAI: GPT-6 Astra Pro (batch)",
+        "free": false,
+        "context": 1050000
+      },
+      {
+        "id": "openai/gpt-6-astra:batch",
+        "name": "OpenAI: GPT-6 Astra (batch)",
+        "free": false,
+        "context": 1050000
+      },
+      {
         "id": "openai/gpt-audio",
         "name": "OpenAI: GPT Audio",
         "free": false,
@@ -1648,8 +2403,44 @@
         "context": 400000
       },
       {
+        "id": "openai/gpt-image-1",
+        "name": "OpenAI: GPT Image 1",
+        "free": false,
+        "context": 400000
+      },
+      {
+        "id": "openai/gpt-image-1-mini",
+        "name": "OpenAI: GPT Image 1 Mini",
+        "free": false,
+        "context": 400000
+      },
+      {
+        "id": "openai/gpt-image-2",
+        "name": "OpenAI: GPT Image 2",
+        "free": false,
+        "context": 400000
+      },
+      {
+        "id": "openai/gpt-image-2.5-flare",
+        "name": "OpenAI: GPT Image 2.5 Flare",
+        "free": false,
+        "context": 400000
+      },
+      {
+        "id": "openai/gpt-image-2.5-sunburst",
+        "name": "OpenAI: GPT Image 2.5 Sunburst",
+        "free": false,
+        "context": 400000
+      },
+      {
         "id": "openai/gpt-oss-120b",
         "name": "OpenAI: gpt-oss-120b",
+        "free": false,
+        "context": 131072
+      },
+      {
+        "id": "openai/gpt-oss-120b:batch",
+        "name": "OpenAI: gpt-oss-120b (batch)",
         "free": false,
         "context": 131072
       },
@@ -1660,10 +2451,22 @@
         "context": 131072
       },
       {
+        "id": "openai/gpt-oss-20b:batch",
+        "name": "OpenAI: gpt-oss-20b (batch)",
+        "free": false,
+        "context": 131072
+      },
+      {
         "id": "openai/gpt-oss-safeguard-20b",
         "name": "OpenAI: gpt-oss-safeguard-20b",
         "free": false,
         "context": 131072
+      },
+      {
+        "id": "openai/gpt-transcribe",
+        "name": "OpenAI: GPT Transcribe",
+        "free": false,
+        "context": null
       },
       {
         "id": "openai/o1",
@@ -1674,18 +2477,6 @@
       {
         "id": "openai/o1-pro",
         "name": "OpenAI: o1-pro",
-        "free": false,
-        "context": 200000
-      },
-      {
-        "id": "openai/o1-pro:batch",
-        "name": "OpenAI: o1-pro (batch)",
-        "free": false,
-        "context": 200000
-      },
-      {
-        "id": "openai/o1:batch",
-        "name": "OpenAI: o1 (batch)",
         "free": false,
         "context": 200000
       },
@@ -1708,12 +2499,6 @@
         "context": 200000
       },
       {
-        "id": "openai/o3-mini-high:batch",
-        "name": "OpenAI: o3 Mini High (batch)",
-        "free": false,
-        "context": 200000
-      },
-      {
         "id": "openai/o3-mini:batch",
         "name": "OpenAI: o3 Mini (batch)",
         "free": false,
@@ -1722,12 +2507,6 @@
       {
         "id": "openai/o3-pro",
         "name": "OpenAI: o3 Pro",
-        "free": false,
-        "context": 200000
-      },
-      {
-        "id": "openai/o3-pro:batch",
-        "name": "OpenAI: o3 Pro (batch)",
         "free": false,
         "context": 200000
       },
@@ -1750,16 +2529,64 @@
         "context": 200000
       },
       {
-        "id": "openai/o4-mini-high:batch",
-        "name": "OpenAI: o4 Mini High (batch)",
-        "free": false,
-        "context": 200000
-      },
-      {
         "id": "openai/o4-mini:batch",
         "name": "OpenAI: o4 Mini (batch)",
         "free": false,
         "context": 200000
+      },
+      {
+        "id": "openai/text-embedding-3-large",
+        "name": "OpenAI: Text Embedding 3 Large",
+        "free": false,
+        "context": 8192
+      },
+      {
+        "id": "openai/text-embedding-3-large:batch",
+        "name": "OpenAI: Text Embedding 3 Large (batch)",
+        "free": false,
+        "context": 8192
+      },
+      {
+        "id": "openai/text-embedding-3-small",
+        "name": "OpenAI: Text Embedding 3 Small",
+        "free": false,
+        "context": 8192
+      },
+      {
+        "id": "openai/text-embedding-3-small:batch",
+        "name": "OpenAI: Text Embedding 3 Small (batch)",
+        "free": false,
+        "context": 8192
+      },
+      {
+        "id": "openai/text-embedding-ada-002",
+        "name": "OpenAI: Text Embedding Ada 002",
+        "free": false,
+        "context": 8192
+      },
+      {
+        "id": "openai/text-embedding-ada-002:batch",
+        "name": "OpenAI: Text Embedding Ada 002 (batch)",
+        "free": false,
+        "context": 8192
+      },
+      {
+        "id": "openai/whisper-1",
+        "name": "OpenAI: Whisper 1",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "openai/whisper-large-v3",
+        "name": "OpenAI: Whisper Large V3",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "openai/whisper-large-v3-turbo",
+        "name": "OpenAI: Whisper Large V3 Turbo",
+        "free": false,
+        "context": null
       },
       {
         "id": "openrouter/auto",
@@ -1796,6 +2623,18 @@
         "name": "Perceptron: Perceptron Mk1",
         "free": false,
         "context": 32768
+      },
+      {
+        "id": "perplexity/pplx-embed-v1-0.6b",
+        "name": "Perplexity: Embed V1 0.6B",
+        "free": false,
+        "context": 32000
+      },
+      {
+        "id": "perplexity/pplx-embed-v1-4b",
+        "name": "Perplexity: Embed V1 4B",
+        "free": false,
+        "context": 32000
       },
       {
         "id": "perplexity/sonar",
@@ -1858,6 +2697,18 @@
         "context": 32768
       },
       {
+        "id": "qwen/qwen-audio-3.0-tts-flash",
+        "name": "Qwen: Qwen-Audio-3.0-TTS Flash",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "qwen/qwen-audio-3.0-tts-plus",
+        "name": "Qwen: Qwen-Audio-3.0-TTS Plus",
+        "free": false,
+        "context": null
+      },
+      {
         "id": "qwen/qwen-plus",
         "name": "Qwen: Qwen-Plus",
         "free": false,
@@ -1866,12 +2717,6 @@
       {
         "id": "qwen/qwen-plus-2025-07-28",
         "name": "Qwen: Qwen Plus 0728",
-        "free": false,
-        "context": 1000000
-      },
-      {
-        "id": "qwen/qwen-plus-2025-07-28:thinking",
-        "name": "Qwen: Qwen Plus 0728 (thinking)",
         "free": false,
         "context": 1000000
       },
@@ -1936,6 +2781,24 @@
         "context": 131072
       },
       {
+        "id": "qwen/qwen3-asr-0.6b",
+        "name": "Qwen: Qwen3 ASR 0.6B",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "qwen/qwen3-asr-1.7b",
+        "name": "Qwen: Qwen3 ASR 1.7B",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "qwen/qwen3-asr-flash-2026-02-10",
+        "name": "Qwen: Qwen3 ASR Flash",
+        "free": false,
+        "context": null
+      },
+      {
         "id": "qwen/qwen3-coder",
         "name": "Qwen: Qwen3 Coder 480B A35B",
         "free": false,
@@ -1964,6 +2827,18 @@
         "name": "Qwen: Qwen3 Coder Plus",
         "free": false,
         "context": 1000000
+      },
+      {
+        "id": "qwen/qwen3-embedding-4b",
+        "name": "Qwen: Qwen3 Embedding 4B",
+        "free": false,
+        "context": 32768
+      },
+      {
+        "id": "qwen/qwen3-embedding-8b",
+        "name": "Qwen: Qwen3 Embedding 8B",
+        "free": false,
+        "context": 32768
       },
       {
         "id": "qwen/qwen3-max",
@@ -2062,6 +2937,12 @@
         "context": 262144
       },
       {
+        "id": "qwen/qwen3.5-9b:batch",
+        "name": "Qwen: Qwen3.5-9B (batch)",
+        "free": false,
+        "context": 262144
+      },
+      {
         "id": "qwen/qwen3.5-flash-02-23",
         "name": "Qwen: Qwen3.5-Flash",
         "free": false,
@@ -2134,14 +3015,26 @@
         "context": 1048576
       },
       {
+        "id": "qwen/qwen3.8-2.4t-a95b:batch",
+        "name": "Qwen: Qwen3.8 2.4T A95B (batch)",
+        "free": false,
+        "context": 1010000
+      },
+      {
         "id": "qwen/qwen3.8-27b",
         "name": "Qwen: Qwen3.8 27B",
         "free": false,
         "context": 1000000
       },
       {
-        "id": "qwen/qwen3.8-max",
-        "name": "Qwen: Qwen3.8 Max",
+        "id": "qwen/qwen3.8-flash",
+        "name": "Qwen: Qwen3.8 Flash",
+        "free": false,
+        "context": 1000000
+      },
+      {
+        "id": "qwen/qwen3.8-max-0902",
+        "name": "Qwen: Qwen3.8 Max (0902)",
         "free": false,
         "context": 1000000
       },
@@ -2200,6 +3093,42 @@
         "context": 131072
       },
       {
+        "id": "sentence-transformers/all-minilm-l12-v2",
+        "name": "Sentence Transformers: all-MiniLM-L12-v2",
+        "free": false,
+        "context": 512
+      },
+      {
+        "id": "sentence-transformers/all-minilm-l6-v2",
+        "name": "Sentence Transformers: all-MiniLM-L6-v2",
+        "free": false,
+        "context": 512
+      },
+      {
+        "id": "sentence-transformers/all-mpnet-base-v2",
+        "name": "Sentence Transformers: all-mpnet-base-v2",
+        "free": false,
+        "context": 512
+      },
+      {
+        "id": "sentence-transformers/multi-qa-mpnet-base-dot-v1",
+        "name": "Sentence Transformers: multi-qa-mpnet-base-dot-v1",
+        "free": false,
+        "context": 512
+      },
+      {
+        "id": "sentence-transformers/paraphrase-minilm-l6-v2",
+        "name": "Sentence Transformers: paraphrase-MiniLM-L6-v2",
+        "free": false,
+        "context": 512
+      },
+      {
+        "id": "sesame/csm-1b",
+        "name": "Sesame: CSM 1B",
+        "free": false,
+        "context": 4096
+      },
+      {
         "id": "stepfun/step-3.5-flash",
         "name": "StepFun: Step 3.5 Flash",
         "free": false,
@@ -2248,16 +3177,16 @@
         "context": 262144
       },
       {
+        "id": "tencent/hy4-preview",
+        "name": "Tencent: Hy4 preview",
+        "free": false,
+        "context": 1048576
+      },
+      {
         "id": "thedrummer/cydonia-24b-v4.1",
         "name": "TheDrummer: Cydonia 24B V4.1",
         "free": false,
         "context": 131072
-      },
-      {
-        "id": "thedrummer/rocinante-12b",
-        "name": "TheDrummer: Rocinante 12B",
-        "free": false,
-        "context": 65536
       },
       {
         "id": "thedrummer/skyfall-36b-v2",
@@ -2272,6 +3201,18 @@
         "context": 1024000
       },
       {
+        "id": "thenlper/gte-base",
+        "name": "Thenlper: GTE-Base",
+        "free": false,
+        "context": 512
+      },
+      {
+        "id": "thenlper/gte-large",
+        "name": "Thenlper: GTE-Large",
+        "free": false,
+        "context": 512
+      },
+      {
         "id": "thinkingmachines/inkling",
         "name": "Thinking Machines: Inkling",
         "free": false,
@@ -2282,6 +3223,12 @@
         "name": "Thinking Machines: Inkling Small",
         "free": false,
         "context": 1048576
+      },
+      {
+        "id": "thinkingmachines/inkling-small:batch",
+        "name": "Thinking Machines: Inkling Small (batch)",
+        "free": false,
+        "context": 524288
       },
       {
         "id": "thinkingmachines/inkling:batch",
@@ -2308,6 +3255,36 @@
         "context": 524288
       },
       {
+        "id": "voyageai/voyage-4",
+        "name": "VoyageAI by MongoDB: voyage-4",
+        "free": false,
+        "context": 32000
+      },
+      {
+        "id": "voyageai/voyage-4-large",
+        "name": "VoyageAI by MongoDB: voyage-4-large",
+        "free": false,
+        "context": 32000
+      },
+      {
+        "id": "voyageai/voyage-4-lite",
+        "name": "VoyageAI by MongoDB: voyage-4-lite",
+        "free": false,
+        "context": 32000
+      },
+      {
+        "id": "voyageai/voyage-code-4",
+        "name": "VoyageAI by MongoDB: voyage-code-4",
+        "free": false,
+        "context": 32000
+      },
+      {
+        "id": "voyageai/voyage-multimodal-3.5",
+        "name": "VoyageAI by MongoDB: voyage-multimodal-3.5",
+        "free": false,
+        "context": 32000
+      },
+      {
         "id": "writer/palmyra-x5",
         "name": "Writer: Palmyra X5",
         "free": false,
@@ -2332,6 +3309,12 @@
         "context": 1000000
       },
       {
+        "id": "x-ai/grok-4.3:batch",
+        "name": "SpaceXAI: Grok 4.3 (batch)",
+        "free": false,
+        "context": 1000000
+      },
+      {
         "id": "x-ai/grok-4.5",
         "name": "SpaceXAI: Grok 4.5",
         "free": false,
@@ -2348,6 +3331,18 @@
         "name": "SpaceXAI: Grok Build 0.1",
         "free": false,
         "context": 256000
+      },
+      {
+        "id": "x-ai/grok-stt-1.0",
+        "name": "SpaceXAI: Grok STT 1.0",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "x-ai/grok-voice-tts-1.0",
+        "name": "SpaceXAI: Grok Voice TTS 1.0",
+        "free": false,
+        "context": 15000
       },
       {
         "id": "xiaomi/mimo-v2.5",
@@ -2401,7 +3396,7 @@
         "id": "z-ai/glm-4.7-flash",
         "name": "Z.ai: GLM 4.7 Flash",
         "free": false,
-        "context": 202752
+        "context": 200000
       },
       {
         "id": "z-ai/glm-5",
@@ -2431,11 +3426,29 @@
         "id": "z-ai/glm-5.2:batch",
         "name": "Z.ai: GLM 5.2 (batch)",
         "free": false,
-        "context": 1048575
+        "context": 1048576
       },
       {
         "id": "z-ai/glm-5.3",
         "name": "Z.ai: GLM 5.3",
+        "free": false,
+        "context": 1310720
+      },
+      {
+        "id": "z-ai/glm-5.3-flash",
+        "name": "Z.ai: GLM 5.3 Flash",
+        "free": false,
+        "context": 1310720
+      },
+      {
+        "id": "z-ai/glm-5.3-flash:batch",
+        "name": "Z.ai: GLM 5.3 Flash (batch)",
+        "free": false,
+        "context": 1048576
+      },
+      {
+        "id": "z-ai/glm-5.3:batch",
+        "name": "Z.ai: GLM 5.3 (batch)",
         "free": false,
         "context": 1048576
       },
@@ -2512,10 +3525,16 @@
         "context": 500000
       },
       {
+        "id": "~z-ai/glm-flash-latest",
+        "name": "Z.ai: GLM Flash Latest",
+        "free": false,
+        "context": 1310720
+      },
+      {
         "id": "~z-ai/glm-latest",
         "name": "Z.ai: GLM Latest",
         "free": false,
-        "context": 1048576
+        "context": 1310720
       }
     ],
     "base_url": "https://openrouter.ai/api/v1"
@@ -2567,18 +3586,6 @@
         "context": null
       },
       {
-        "id": "meta/llama-3.1-8b-instruct",
-        "name": "meta/llama-3.1-8b-instruct",
-        "free": true,
-        "context": null
-      },
-      {
-        "id": "minimaxai/minimax-m3",
-        "name": "minimaxai/minimax-m3",
-        "free": true,
-        "context": null
-      },
-      {
         "id": "mistralai/mistral-7b-instruct-v0.3",
         "name": "mistralai/mistral-7b-instruct-v0.3",
         "free": true,
@@ -2603,18 +3610,6 @@
         "context": null
       },
       {
-        "id": "nvidia/llama-3.1-nemotron-nano-8b-v1",
-        "name": "nvidia/llama-3.1-nemotron-nano-8b-v1",
-        "free": true,
-        "context": null
-      },
-      {
-        "id": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
-        "name": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
-        "free": true,
-        "context": null
-      },
-      {
         "id": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
         "name": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
         "free": true,
@@ -2627,38 +3622,14 @@
         "context": null
       },
       {
-        "id": "nvidia/nemotron-3-nano-30b-a3b",
-        "name": "nvidia/nemotron-3-nano-30b-a3b",
-        "free": true,
-        "context": null
-      },
-      {
         "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
         "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
         "free": true,
         "context": null
       },
       {
-        "id": "nvidia/nemotron-mini-4b-instruct",
-        "name": "nvidia/nemotron-mini-4b-instruct",
-        "free": true,
-        "context": null
-      },
-      {
-        "id": "nvidia/nemotron-nano-12b-v2-vl",
-        "name": "nvidia/nemotron-nano-12b-v2-vl",
-        "free": true,
-        "context": null
-      },
-      {
         "id": "nvidia/nemotron-nano-3-30b-a3b",
         "name": "nvidia/nemotron-nano-3-30b-a3b",
-        "free": true,
-        "context": null
-      },
-      {
-        "id": "nvidia/nvidia-nemotron-nano-9b-v2",
-        "name": "nvidia/nvidia-nemotron-nano-9b-v2",
         "free": true,
         "context": null
       },
@@ -2695,6 +3666,12 @@
       {
         "id": "deepseek-ai/deepseek-v4-flash-0731",
         "name": "deepseek-ai/deepseek-v4-flash-0731",
+        "free": false,
+        "context": null
+      },
+      {
+        "id": "deepseek-ai/deepseek-v4-pro-0813",
+        "name": "deepseek-ai/deepseek-v4-pro-0813",
         "free": false,
         "context": null
       },
@@ -2759,38 +3736,14 @@
         "context": null
       },
       {
-        "id": "meta/llama-3.1-70b-instruct",
-        "name": "meta/llama-3.1-70b-instruct",
-        "free": false,
-        "context": null
-      },
-      {
         "id": "meta/llama-3.2-11b-vision-instruct",
         "name": "meta/llama-3.2-11b-vision-instruct",
         "free": false,
         "context": null
       },
       {
-        "id": "meta/llama-3.2-1b-instruct",
-        "name": "meta/llama-3.2-1b-instruct",
-        "free": false,
-        "context": null
-      },
-      {
-        "id": "meta/llama-3.2-3b-instruct",
-        "name": "meta/llama-3.2-3b-instruct",
-        "free": false,
-        "context": null
-      },
-      {
         "id": "meta/llama-3.2-90b-vision-instruct",
         "name": "meta/llama-3.2-90b-vision-instruct",
-        "free": false,
-        "context": null
-      },
-      {
-        "id": "meta/llama-3.3-70b-instruct",
-        "name": "meta/llama-3.3-70b-instruct",
         "free": false,
         "context": null
       },
@@ -2879,6 +3832,12 @@
         "context": null
       },
       {
+        "id": "nvidia/ai-synthetic-video-detector",
+        "name": "nvidia/ai-synthetic-video-detector",
+        "free": false,
+        "context": null
+      },
+      {
         "id": "nvidia/ising-calibration-1.5-31b",
         "name": "nvidia/ising-calibration-1.5-31b",
         "free": false,
@@ -2899,18 +3858,6 @@
       {
         "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
         "name": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
-        "free": false,
-        "context": null
-      },
-      {
-        "id": "nvidia/llama-3.3-nemotron-super-49b-v1",
-        "name": "nvidia/llama-3.3-nemotron-super-49b-v1",
-        "free": false,
-        "context": null
-      },
-      {
-        "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
-        "name": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
         "free": false,
         "context": null
       },
@@ -2999,12 +3946,6 @@
         "context": null
       },
       {
-        "id": "openai/gpt-oss-120b",
-        "name": "openai/gpt-oss-120b",
-        "free": false,
-        "context": null
-      },
-      {
         "id": "openai/gpt-oss-20b",
         "name": "openai/gpt-oss-20b",
         "free": false,
@@ -3013,12 +3954,6 @@
       {
         "id": "poolside/laguna-xs-2.1",
         "name": "poolside/laguna-xs-2.1",
-        "free": false,
-        "context": null
-      },
-      {
-        "id": "stepfun-ai/step-3.7-flash",
-        "name": "stepfun-ai/step-3.7-flash",
         "free": false,
         "context": null
       },
@@ -3096,7 +4031,7 @@
   "ollama": {
     "provider": "ollama",
     "source": "fallback",
-    "error": "<urlopen error [Errno 111] Connection refused>",
+    "error": "<urlopen error [Errno 61] Connection refused>",
     "models": [
       {
         "id": "llama3.1",
@@ -3116,7 +4051,16 @@
   "anthropic": {
     "provider": "anthropic",
     "source": "fallback",
+    "error": "HTTP Error 401: Unauthorized",
     "models": [
+      {
+        "id": "claude-sonnet-4-5",
+        "free": false
+      },
+      {
+        "id": "claude-opus-4-1",
+        "free": false
+      },
       {
         "id": "claude-sonnet-4-20250514",
         "free": false
@@ -3125,30 +4069,43 @@
         "id": "claude-3-5-haiku-latest",
         "free": false
       }
-    ]
+    ],
+    "base_url": "https://api.anthropic.com"
   },
   "gemini": {
     "provider": "gemini",
     "source": "fallback",
+    "error": "HTTP Error 403: Forbidden",
     "models": [
+      {
+        "id": "gemini-2.5-flash",
+        "free": false
+      },
+      {
+        "id": "gemini-2.5-pro",
+        "free": false
+      },
       {
         "id": "gemini-2.0-flash",
         "free": false
       },
       {
-        "id": "gemini-2.5-flash",
+        "id": "gemini-2.5-flash-lite",
         "free": false
       }
-    ]
+    ],
+    "base_url": "https://generativelanguage.googleapis.com"
   },
   "custom": {
     "provider": "custom",
     "source": "fallback",
+    "error": "<urlopen error [Errno 61] Connection refused>",
     "models": [
       {
         "id": "local-model",
         "free": true
       }
-    ]
+    ],
+    "base_url": "http://127.0.0.1:1234/v1"
   }
 }

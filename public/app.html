@@ -43,7 +43,7 @@
       <header class="screen-intro">
         <p class="kicker">Local · BYOK · nothing uploaded to WorkupIQ servers</p>
         <h1>Screen a deck</h1>
-        <p class="lede">Key stays in this browser. Free models from the live catalog sit at the top of the list.</p>
+        <p class="lede">Key stays in this browser. Refresh models pulls the full live catalog; free variants sit at the top.</p>
       </header>
 
       <div class="app-layout">
@@ -65,6 +65,10 @@
             <label class="field field-model">
               Model
               <select id="modelSelect"></select>
+            </label>
+            <label class="field">
+              Filter catalog
+              <input id="modelFilter" placeholder="Search name or id" autocomplete="off" />
             </label>
             <label class="field">
               Or paste model id
@@ -139,6 +143,6 @@
     </div>
   </footer>
   <script src="app.js"></script>
-  <script src="screen.js"></script>
+  <script src="screen.js?v=20260910d"></script>
 </body>
 </html>
