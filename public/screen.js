@@ -136,7 +136,7 @@
       serverStatus.textContent = "Local server · " + data.status + (data.workup_parser ? " · " + data.workup_parser : "");
       return true;
     } catch {
-      serverStatus.textContent = "No /api/health — start with: python3 server.py";
+      serverStatus.textContent = "The local server isn’t connected. In the project’s local folder, run python3 server.py, then open its localhost address.";
       return false;
     }
   }
@@ -355,18 +355,18 @@
     } else if (activeTab === "workup") {
       resultEl.textContent = pack.workup_markdown || "";
     } else if (activeTab === "faq") {
-      resultEl.textContent = pack.faq_markdown || "FAQ is empty because those answers were not in the deck text layer.\n\nDownload templates/WorkupIQ_RedTeam_FAQ_Template.md from the home page, fill Q1–Q8, export as selectable-text PDF, attach it with the deck, and re-run the Screen.";
+      resultEl.textContent = pack.faq_markdown || "We couldn’t find enough information in the deck text to draft the FAQ.\n\nDownload templates/WorkupIQ_RedTeam_FAQ_Template.md from the home page, fill Q1–Q8, export as selectable-text PDF, attach it with the deck, and re-run the Screen.";
     } else if (["gatekeeper", "wrapper", "forensic", "premortem"].includes(activeTab)) {
       const text = (pack.attacks && pack.attacks[activeTab]) || "";
       const requested = pack.attacks_requested || [];
       if (text) resultEl.textContent = text;
       else if (requested.length && !requested.includes(activeTab)) {
-        resultEl.textContent = "Not selected for this run. Check " + activeTab + " above and click Run Red Team.";
+        resultEl.textContent = "This review wasn’t selected. Choose  " + activeTab + "  above and click Review my pitch.";
       } else {
-        resultEl.textContent = "Selected, but this pass returned no text. Re-run Red Team with this box checked.";
+        resultEl.textContent = "The model didn’t return this section. Keep this option selected and try Review my pitch again.";
       }
     } else if (activeTab === "hygiene") {
-      resultEl.textContent = (pack.hygiene || []).map((h) => "• " + h).join("\n") || "No hygiene flags.";
+      resultEl.textContent = (pack.hygiene || []).map((h) => "• " + h).join("\n") || "No readability issues were flagged in this review.";
     } else {
       resultEl.textContent = extracted;
     }

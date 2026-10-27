@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WorkupIQ — The associate workup, before the associate exists</title>
-  <meta name="description" content="WorkupIQ screens a pitch deck the way a fund’s LLM and junior associate will, then emits a text-dense workup and FAQ automated triage cannot treat as incomplete." />
-  <meta name="theme-color" content="#141210" />
+  <title>WorkupIQ — Find the holes in your pitch before investors do</title>
+  <meta name="description" content="What would make an investor hesitate? Review your pitch, spot missing evidence, and prepare clearer answers with WorkupIQ." />
+  <meta name="theme-color" content="#FAF9F6" />
   <link rel="canonical" href="https://workupiq.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://workupiq.com/" />
   <meta property="og:title" content="WorkupIQ" />
-  <meta property="og:description" content="The associate workup — before the associate exists." />
+  <meta property="og:description" content="Find the holes in your pitch before investors do." />
   <meta property="og:image" content="https://workupiq.com/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="WorkupIQ" />
-  <meta name="twitter:description" content="Extracted. Attacked. Packed." />
+  <meta name="twitter:description" content="A sharper pitch starts with better questions." />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260910c" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20261027" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -29,29 +29,26 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="mark" href="#top" aria-label="WorkupIQ home">
-        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
-          <rect x="1" y="1" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25"/>
-          <path d="M5 15.5V6.5h2.1l3.9 6.2h.1V6.5H13v9H10.9L7 9.3h-.1v6.2H5z" fill="currentColor"/>
-        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M7 10l4 12 5-9 5 9 4-12" fill="none" stroke="#FAF9F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>WorkupIQ</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#problem">Why</a>
-        <a href="#screen">Screen</a>
-        <a href="#pack">Pack</a>
+        <a href="#problem">Why it matters</a>
+        <a href="#screen">Pitch review</a>
+        <a href="#pack">What you get</a>
         <a href="#templates">Templates</a>
-        <a href="mentor.html">Mentor</a>
-        <a href="app.html" class="nav-cta">Open Screen</a>
+        <a href="mentor.html">Get feedback</a>
+        <a href="app.html" class="nav-cta">Check my pitch</a>
       </nav>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileNav" id="menuBtn">Menu</button>
     </div>
     <div class="mobile-nav" id="mobileNav">
-      <a href="#problem">Why</a>
-      <a href="#screen">Screen</a>
-      <a href="#pack">Pack</a>
+      <a href="#problem">Why it matters</a>
+      <a href="#screen">Pitch review</a>
+      <a href="#pack">What you get</a>
       <a href="#templates">Templates</a>
-      <a href="mentor.html">Mentor</a>
-      <a href="app.html">Open Screen</a>
+      <a href="mentor.html">Get feedback</a>
+      <a href="app.html">Check my pitch</a>
     </div>
   </header>
 
@@ -59,74 +56,54 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="kicker">Fundraising pack for the LLM screening layer</p>
-          <h1>The associate workup —<br /> before the associate exists.</h1>
+          <p class="kicker">For founders getting ready to raise</p>
+          <h1>Find the holes<br />in your pitch.<br /><span class="accent-text">Before an<br />investor does.</span></h1>
           <p class="lede">
-            Funds paste your deck into Claude before a partner finishes slide two.
-            Charts flatten. Bullets look like a missing model. Adversarial prompts hunt for a reason to pass.
-            WorkupIQ extracts every claim, attacks the gaps, and emits a text-dense pack the parser cannot treat as incomplete.
+            You know your business inside out. Your deck has to make the case without you in the room. WorkupIQ helps you spot shaky claims, missing numbers, and questions worth answering before you hit send.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="app.html">Screen a deck</a>
+            <a class="btn btn-primary" href="app.html">Check my pitch</a>
             <a class="btn btn-ghost" href="#screen">How it works</a>
           </div>
-          <p class="fine">Not a deck designer. Not investor matching. Not cybersecurity red teaming.</p>
+          <p class="fine">Start with your PDF or PowerPoint. Get a clearer picture of what needs work.</p>
         </div>
 
-        <div class="doc-stack">
-          <div class="doc-sheet" aria-hidden="true"></div>
-          <aside class="doc" aria-label="Sample Workup excerpt">
-            <div class="doc-bar">
-              <span>Acme_WorkupIQ_Workup.md</span>
-              <span class="pill pill-advance">WIQ Verdict · Advance</span>
-            </div>
-            <div class="doc-body">
-              <p class="doc-kicker">Investment memo · 2 pages · text-selectable</p>
-              <h2>Acme Robotics — Series A workup</h2>
-              <p class="doc-meta">Confidential · prepared for automated pre-read · grounded to deck slides 4–11</p>
-              <h3>1. The ask</h3>
-              <p>$8.4M primary on a $36M post. 18-month runway to $4.1M ARR and first hospital system expansion.</p>
-              <h3>2. Unit economics (source: slide 8 table, not the chart image)</h3>
-              <table>
-                <thead>
-                  <tr><th>Metric</th><th>Now</th><th>M18 target</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Gross margin</td><td>71%</td><td>76%</td></tr>
-                  <tr><td>Net revenue retention</td><td>118%</td><td>130%</td></tr>
-                  <tr><td>Payback</td><td>11 mo</td><td>8 mo</td></tr>
-                </tbody>
-              </table>
-              <h3>3. What the Gatekeeper still flags</h3>
-              <ul>
-                <li>TAM uses top-down only — bottoms-up hospital count not in deck text layer.</li>
-                <li>Regulatory path stated, not evidenced (no 510(k) docket ID).</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
+        <aside class="pitch-example" aria-label="Example of a claim and the questions it raises">
+          <div class="example-heading"><span class="example-dot" aria-hidden="true"></span> A second look at slide seven</div>
+          <div class="pitch-claim">
+            <p class="kicker">Your slide says</p>
+            <p class="claim-quote">“We’re going after a<br /><strong>$10 billion market.”</strong></p>
+          </div>
+          <div class="pitch-question">
+            <p class="kicker">An investor might ask</p>
+            <h2>Who actually buys?<br />And how many are there?</h2>
+            <p>A big market number gets attention. A customer count, a price, and a clear set of assumptions make it easier to believe.</p>
+          </div>
+          <div class="example-takeaway"><span aria-hidden="true">↗</span> Find the question behind the slide.</div>
+          <p class="example-caption">Illustrative example. Your review depends on your deck and chosen model.</p>
+        </aside>
       </div>
     </section>
 
     <section class="band" id="problem">
       <div class="wrap">
-        <p class="kicker">Why standard decks fail</p>
-        <h2>The first reader is a model.</h2>
+        <p class="kicker">The gaps are easy to miss when it’s your own deck</p>
+        <h2>A good pitch can still leave big questions.</h2>
         <div class="tri">
           <article>
             <span class="num">01</span>
-            <h3>OCR &amp; chart flattening</h3>
-            <p>Ingestion pipelines miss metrics trapped in images, cap tables, and multi-column layouts. If the number is only in a PNG, it does not exist.</p>
+            <h3>Great chart. Where are the numbers?</h3>
+            <p>That chart took hours to get right. But if its numbers are trapped in an image, a text-based review can miss them. Put the figures where they can be read.</p>
           </article>
           <article>
             <span class="num">02</span>
-            <h3>No narrative context</h3>
-            <p>Slides are fragments. Humans supply the reasoning on the call. Standalone, an LLM flags incomplete reasoning as an incomplete business.</p>
+            <h3>You won’t be there to explain slide seven.</h3>
+            <p>You know why customers buy and how the business makes money. Does the deck explain it, or does it need you talking over it?</p>
           </article>
           <article>
             <span class="num">03</span>
-            <h3>Adversarial evaluator prompts</h3>
-            <p>Associates already ask: “Give me five reasons to pass. Find TAM discrepancies. List unaddressed regulatory risk.” Your deck is scored against that prompt.</p>
+            <h3>“Why should we pass?”</h3>
+            <p>It’s an uncomfortable question. Ask it now. Test the market estimate, the margins, and the moat while you still have time to improve the answers.</p>
           </article>
         </div>
       </div>
@@ -134,23 +111,23 @@
 
     <section id="screen">
       <div class="wrap">
-        <p class="kicker">WorkupIQ Screen</p>
-        <h2>Upload. Attack. Pack.</h2>
+        <p class="kicker">WorkupIQ pitch review</p>
+        <h2>Give your pitch a tough first read.</h2>
         <div class="screen-steps">
           <article>
-            <span class="num">01 · Upload</span>
-            <h3>Extract the text layer</h3>
-            <p>The Screen reads the deck the way a fund parser does: selectable text, reading order, tables, and what the charts fail to yield. Claims become a Ground Truth Graph. Nothing is invented.</p>
+            <span class="num">01 · Bring your deck</span>
+            <h3>Start with what you have</h3>
+            <p>Upload a PDF or PowerPoint in the local app. WorkupIQ reads the available text and flags information it can’t see, including numbers in image-only charts.</p>
           </article>
           <article>
-            <span class="num">02 · Attack</span>
-            <h3>Run the associate prompts</h3>
-            <p>Four agents use the same sequences juniors use: Gatekeeper Screener, Defensibility Stress Test, Financial Forensic Audit, Partner Pre-Mortem. Output is a WIQ Verdict, not a vibe score.</p>
+            <span class="num">02 · Test the story</span>
+            <h3>Ask the awkward questions</h3>
+            <p>Choose reviews of the overall pitch, your competitive edge, the financials, or what could go wrong. See which claims need stronger evidence and which questions need an answer.</p>
           </article>
           <article>
-            <span class="num">03 · Pack</span>
-            <h3>Emit the leave-behind</h3>
-            <p>You confirm missing numbers. WorkupIQ writes the 2-page workup, red-team FAQ, appendix tables, Notion index, and the email blurb that travels with the visual deck.</p>
+            <span class="num">03 · Make it clearer</span>
+            <h3>Give the next reader more to go on</h3>
+            <p>Get a draft memo, a diligence FAQ, and a list of missing information. Check them against your source material, add the facts, and use the templates to finish your investor pack.</p>
           </article>
         </div>
       </div>
@@ -158,20 +135,20 @@
 
     <section id="verdict">
       <div class="wrap">
-        <p class="kicker">WIQ Verdict</p>
-        <h2>Three outcomes. No theater.</h2>
+        <p class="kicker">Your review</p>
+        <h2>Know what to work on next.</h2>
         <div class="verdicts">
           <article class="v pass">
             <h3>Pass</h3>
-            <p>The Gatekeeper can still write five durable reasons to decline. Do not send. Close the gaps first.</p>
+            <p>The review found substantial reasons an investor might decline. Start with those concerns and the evidence behind them.</p>
           </article>
           <article class="v request">
             <h3>Request Data</h3>
-            <p>The model is blocked on missing evidence — TAM bottoms-up, cohort table, docket ID, cap-table terms. Founder supplies; Screen re-runs.</p>
+            <p>The story needs more evidence. Add the missing figures or sources, then run the review again.</p>
           </article>
           <article class="v advance">
             <h3>Advance</h3>
-            <p>Adversarial prompts no longer produce novel, well-supported pass reasons. Pack is ready for the inbox.</p>
+            <p>The review found fewer unresolved objections in the text provided. Check the draft before sharing; this is an AI assessment, not an investment decision.</p>
           </article>
         </div>
       </div>
@@ -179,28 +156,28 @@
 
     <section class="band" id="pack">
       <div class="wrap">
-        <p class="kicker">WorkupIQ Pack</p>
-        <h2>What ships with the deck</h2>
+        <p class="kicker">Your investor documents</p>
+        <h2>Make the follow-up easier to read.</h2>
         <div class="pack-grid">
           <article>
             <p class="file">Workup.md</p>
             <h3>2-page investment memo</h3>
-            <p>Partner-memo structure. TAM methodology in a table. Unit economics as numbers, not spark-lines. Competitive matrix in text. Markdown-friendly PDF.</p>
+            <p>A concise draft of the business, the ask, and the evidence. Give readers a place to find the facts without hunting through slides.</p>
           </article>
           <article>
             <p class="file">FAQ.md</p>
-            <h3>Red-team diligence Q&amp;A</h3>
-            <p>Quantitative answers grouped the way institutions ask: moat, unit economics, regulatory, scientific, go-to-market. Written to survive “find reasons to pass.”</p>
+            <h3>Answers to the hard questions</h3>
+            <p>Prepare for questions about your edge, margins, route to market, and relevant scientific or regulatory risks. See where an answer still needs evidence.</p>
           </article>
           <article>
             <p class="file">Hygiene.md</p>
-            <h3>Parser report</h3>
-            <p>Selectable text, reading order, flattened charts, missing captions. The list of things the fund model will not see unless you fix them.</p>
+            <h3>What the review couldn’t read</h3>
+            <p>Find text and chart issues that can hide important details from a text-based review. Use the report to decide what to add or clarify.</p>
           </article>
           <article>
-            <p class="file">Pack</p>
-            <h3>Dual-format delivery</h3>
-            <p>Visual deck stays human. Workup + FAQ + raw tables + Notion master index + email blurb go in the thread the associate actually scrapes.</p>
+            <p class="file">What you get</p>
+            <h3>The rest of your investor pack</h3>
+            <p>Use the downloadable templates for supporting tables, a data-room index, and an intro email. Keep the facts easy to find after the meeting.</p>
           </article>
         </div>
       </div>
@@ -210,41 +187,41 @@
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">Templates</p>
-          <h2>Fill these. Then run the Screen.</h2>
-          <p class="lede">The FAQ tab stays empty when those answers are not in the deck text layer. Download, replace the brackets, export as selectable-text PDF, attach with the deck, and re-run.</p>
+          <h2>Staring at a blank page? Steal the structure.</h2>
+          <p class="lede">Start with a memo, FAQ, or email template. Replace the brackets with your own facts. If the review can’t find an answer in your deck, use the FAQ to work out what’s missing.</p>
         </div>
         <p class="hero-actions">
-          <a class="btn btn-primary" href="templates/WorkupIQ_Templates.zip" download>Download all templates (.zip)</a>
+          <a class="btn btn-primary" href="templates/WorkupIQ_Templates.zip" download>Get the template kit (.zip)</a>
         </p>
         <div class="file-list">
           <a class="file-row" href="templates/WorkupIQ_Investment_Memo_Template.md" download>
             <span class="file">Workup.md</span>
-            <span><strong>2-page investment memo</strong> — partner-memo sections plus TAM, unit-economics, and competitive tables.</span>
+            <span><strong>2-page investment memo</strong> — a clear structure for your market, business model, and competitors.</span>
             <span class="file-dl">Download</span>
           </a>
           <a class="file-row" href="templates/WorkupIQ_RedTeam_FAQ_Template.md" download>
             <span class="file">FAQ.md</span>
-            <span><strong>Red-team diligence Q&amp;A</strong> — Q1–Q8: moat, margins, CAC, burn, regulatory path, POV conversion, cap table.</span>
+            <span><strong>Answers to the hard questions</strong> — eight questions about your edge, costs, growth, funding, and risks.</span>
             <span class="file-dl">Download</span>
           </a>
           <a class="file-row" href="templates/WorkupIQ_Appendix_Tables_Template.md" download>
             <span class="file">Hygiene.md</span>
-            <span><strong>Appendix tables</strong> — one raw table per chart so numbers survive flattening.</span>
+            <span><strong>Appendix tables</strong> — put the figures behind each chart in a readable table.</span>
             <span class="file-dl">Download</span>
           </a>
           <a class="file-row" href="templates/WorkupIQ_RedTeam_Prompts.md" download>
             <span class="file">Attack.md</span>
-            <span><strong>Four red-team prompts</strong> — Gatekeeper, wrapper test, financial forensic, IC pre-mortem.</span>
+            <span><strong>Four ways to challenge your pitch</strong> — test the overall case, competitive edge, financials, and failure risks.</span>
             <span class="file-dl">Download</span>
           </a>
           <a class="file-row" href="templates/WorkupIQ_Email_Blurb_Template.md" download>
             <span class="file">Inbox.md</span>
-            <span><strong>Email blurb</strong> — plaintext body and the three-file attachment order.</span>
+            <span><strong>Investor intro email</strong> — a short introduction with space for your ask and supporting documents.</span>
             <span class="file-dl">Download</span>
           </a>
           <a class="file-row" href="templates/WorkupIQ_Notion_Data_Room_Index.md" download>
             <span class="file">Index.md</span>
-            <span><strong>Notion master index</strong> — 00–06 tree an associate can scan in under 90 seconds.</span>
+            <span><strong>Notion master index</strong> — organize the documents investors will ask to see.</span>
             <span class="file-dl">Download</span>
           </a>
         </div>
@@ -254,14 +231,14 @@
     <section class="band" id="not">
       <div class="wrap split">
         <div>
-          <p class="kicker">Scope</p>
-          <h2>What WorkupIQ is not</h2>
+          <p class="kicker">What to expect</p>
+          <h2>Better prepared for the next conversation.</h2>
         </div>
         <ul class="not-list">
-          <li>Not a slide redesign tool. Keep your visual deck.</li>
-          <li>Not a promise that a partner will write a check.</li>
-          <li>Not AttackIQ, QinetiQ, or any cyber red-team product.</li>
-          <li>Not a substitute for counsel, audited financials, or a data room.</li>
+          <li>Keep the deck you’ve built. Use the review to strengthen the story behind it.</li>
+          <li>Treat the verdict as feedback. Investors make their own decisions.</li>
+          <li>Check every draft against your records before sharing it.</li>
+          <li>Bring in your legal, financial, or scientific advisers where their expertise is needed.</li>
         </ul>
       </div>
     </section>
@@ -269,11 +246,10 @@
     <section id="access">
       <div class="wrap access-grid">
         <div>
-          <p class="kicker">Early access</p>
-          <h2>Run a Screen on your next raise.</h2>
+          <p class="kicker">Before you hit send</p>
+          <h2>What’s the question you hope they won’t ask?</h2>
           <p class="lede short">
-            We are onboarding a small set of seed and Series A teams. Send the deck you would actually circulate.
-            You get a WIQ Verdict and a first Workup — not a demo video.
+            That’s a useful place to start. Tell us what you’re raising and where the pitch feels thin. We’ll follow up about a review and the next steps.
           </p>
         </div>
         <form class="access-form" id="accessForm" novalidate>
@@ -297,15 +273,40 @@
             </select>
           </label>
           <label>
-            What should the Screen attack first?
-            <textarea name="note" rows="3" placeholder="TAM methodology, unit economics, regulatory path…"></textarea>
+            Where would you like a second opinion?
+            <textarea name="note" rows="3" placeholder="Is our market estimate convincing? Do the margins add up? What are we missing?"></textarea>
           </label>
           <!-- Honeypot: leave empty. Bots that fill it are silently ignored. -->
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <button class="btn btn-primary" type="submit">Request a Screen</button>
+          <button class="btn btn-primary" type="submit">Let’s review my pitch</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-          <p class="fine">Prefer a working session on the verdict? <a href="mentor.html#book">Book a free 30-minute 1:1</a>. Or write <a href="mailto:hello@workupiq.com">hello@workupiq.com</a>. We do not train on your deck.</p>
+          <p class="fine">Prefer a working session on the verdict? <a href="mentor.html#book">Book a free 30-minute 1:1</a>. Or write <a href="mailto:hello@workupiq.com">hello@workupiq.com</a>. The local app sends deck text to the model provider you choose; check its data policy before running a review.</p>
         </form>
+      </div>
+    </section>
+    <section id="about">
+      <div class="wrap founder-note">
+        <div class="founder-monogram" aria-hidden="true">S<span>↗</span></div>
+        <div>
+          <p class="kicker">A real conversation helps</p>
+          <h2>Hi, I’m Shibi.<br />Let’s talk about your pitch.</h2>
+          <p class="lede">Some questions are easier to work through together. Bring your WorkupIQ review to a free 30-minute session, and we’ll figure out what deserves your attention first.</p>
+          <a class="text-link" href="mentor.html#book">Find a time to talk <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="follow-band" id="follow">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">Still working on your pitch?</p>
+          <h2>A sharper pitch.<br />A better next question.</h2>
+          <p class="lede short">If this got you thinking about your own deck, keep the conversation going. Follow Shibi on X and tell him which question you’re wrestling with.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://x.com/shibi76" target="_blank" rel="noopener noreferrer">Follow @shibi76 on X</a>
+          <a class="btn btn-ghost" href="index.html#templates">Grab the pitch templates</a>
+        </div>
       </div>
     </section>
   </main>
@@ -314,12 +315,12 @@
     <div class="wrap footer-inner">
       <div class="footer-brand">
         <p><strong>WorkupIQ</strong></p>
-        <p>Extracted. Attacked. Packed.</p>
+        <p>A sharper pitch starts with better questions.</p>
       </div>
       <p class="footer-links">
-        <a href="mentor.html">Mentor</a>
-        · <a href="app.html">Screen</a>
-        · <a href="https://calendly.com/workupiq/consultation" target="_blank" rel="noopener noreferrer">Book 30 min</a>
+        <a href="mentor.html">Get feedback</a>
+        · <a href="app.html">Pitch review</a>
+        · <a href="https://calendly.com/workupiq/consultation" target="_blank" rel="noopener noreferrer">Free 30-min call</a>
         · <a href="mailto:hello@workupiq.com">hello@workupiq.com</a>
       </p>
       <p>© <span id="year"></span> WorkupIQ. All rights reserved.</p>

@@ -33,14 +33,14 @@
 
     if (!email || !company || !round) {
       status.className = "form-status err";
-      status.textContent = "Email, company, and round are required.";
+      status.textContent = "Add your email, company, and funding stage so we can follow up.";
       return;
     }
 
     // Honeypot filled → pretend success, do nothing
     if (gotcha) {
       status.className = "form-status ok";
-      status.textContent = "Request received. We’ll reply from hello@workupiq.com.";
+      status.textContent = "Thanks — your request is in. Look out for a reply from hello@workupiq.com.";
       form.reset();
       return;
     }
@@ -69,12 +69,12 @@
       }
 
       status.className = "form-status ok";
-      status.textContent = "Request received. We’ll reply from hello@workupiq.com.";
+      status.textContent = "Thanks — your request is in. Look out for a reply from hello@workupiq.com.";
       form.reset();
     } catch (err) {
       status.className = "form-status err";
       status.textContent =
-        "Something went wrong. Please try again or write hello@workupiq.com.";
+        "We couldn’t send your request. Try again, or email hello@workupiq.com.";
       console.error(err);
     }
   });
