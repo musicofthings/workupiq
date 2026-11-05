@@ -14,3 +14,6 @@ run_worker_first = ["/api/*"]
 [[send_email]]
 name = "SEB"
 destination_address = "shibi.kannan@gmail.com"
+
+[vars]
+ALLOWED_ORIGINS = "https://workupiq.com,https://www.workupiq.com,https://workupiq.shibi-kannan.workers.dev"

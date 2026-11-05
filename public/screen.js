@@ -3,7 +3,6 @@
   const providerEl = $("provider");
   const modelEl = $("model");
   const modelSelect = $("modelSelect");
-  const baseUrlEl = $("baseUrl");
   const apiKeyEl = $("apiKey");
   const companyEl = $("company");
   const drop = $("drop");
@@ -14,21 +13,18 @@
   const masterBox = $("atk-master");
   const downloadBtn = $("downloadBtn");
   const resultEl = $("result");
-  const serverStatus = $("serverStatus");
   const modelStatus = $("modelStatus");
   const keyHint = $("keyHint");
   const refreshBtn = $("refreshModels");
   const modelFilter = $("modelFilter");
 
   const PRESETS = {
-    openrouter: { model: "openrouter/free", baseUrl: "https://openrouter.ai/api/v1", hint: "Full OpenRouter catalog, free variants first. Type in Filter catalog to search. openrouter/free routes across the free pool." },
-    nvidia: { model: "meta/llama-3.1-8b-instruct", baseUrl: "https://integrate.api.nvidia.com/v1", hint: "NVIDIA NIM key from build.nvidia.com. Trial / smaller models are sorted first." },
-    grok: { model: "grok-4.6", baseUrl: "https://api.x.ai/v1", hint: "xAI key from console.x.ai. Grok models are paid." },
-    openai: { model: "gpt-4o-mini", baseUrl: "https://api.openai.com/v1", hint: "Key goes to api.openai.com via the local proxy only." },
-    anthropic: { model: "claude-sonnet-4-5", baseUrl: "https://api.anthropic.com", hint: "Paste your Anthropic key, then Refresh models for the live Claude catalog." },
-    gemini: { model: "gemini-2.5-flash", baseUrl: "https://generativelanguage.googleapis.com", hint: "Google AI Studio key. Refresh models lists every generateContent model on that key." },
-    ollama: { model: "llama3.1", baseUrl: "http://127.0.0.1:11434/v1", hint: "No key. Requires Ollama running locally." },
-    custom: { model: "local-model", baseUrl: "http://127.0.0.1:1234/v1", hint: "Any OpenAI-compatible server on this machine." },
+    openrouter: { model: "openrouter/free", hint: "Full OpenRouter catalog, free variants first. Type in Filter catalog to search. openrouter/free routes across the free pool." },
+    nvidia: { model: "meta/llama-3.1-8b-instruct", hint: "NVIDIA NIM key from build.nvidia.com. Trial / smaller models are sorted first." },
+    grok: { model: "grok-4.6", hint: "xAI key from console.x.ai. Grok models are paid." },
+    openai: { model: "gpt-4o-mini", hint: "Your OpenAI key is sent with each request and isn’t stored by WorkupIQ." },
+    anthropic: { model: "claude-sonnet-4-5", hint: "Paste your Anthropic key, then Refresh models for the live Claude catalog." },
+    gemini: { model: "gemini-2.5-flash", hint: "Google AI Studio key. Refresh models lists every generateContent model on that key." },
   };
 
   let saved = {};
@@ -37,9 +33,10 @@
   } catch {
     saved = {};
   }
-  if (saved.provider && providerEl) providerEl.value = saved.provider;
-  if (saved.model && modelEl) modelEl.value = saved.model;
-  if (saved.baseUrl && baseUrlEl) baseUrlEl.value = saved.baseUrl;
+  if (PRESETS[saved.provider]) {
+    providerEl.value = saved.provider;
+    if (saved.model) modelEl.value = saved.model;
+  }
   if (saved.apiKey && apiKeyEl) apiKeyEl.value = saved.apiKey;
   if (saved.company && companyEl) companyEl.value = saved.company;
   applyPreset(false);
@@ -54,17 +51,17 @@
   providerEl.addEventListener("change", () => {
     applyPreset(true);
     if (modelFilter) modelFilter.value = "";
-    loadModels(true);
+    loadModels();
   });
   modelSelect.addEventListener("change", () => {
     modelEl.value = modelSelect.value;
     persist();
   });
-  [providerEl, modelEl, baseUrlEl, apiKeyEl, companyEl].forEach((el) => {
+  [providerEl, modelEl, apiKeyEl, companyEl].forEach((el) => {
     el.addEventListener("change", persist);
     el.addEventListener("input", persist);
   });
-  refreshBtn.addEventListener("click", () => loadModels(true));
+  refreshBtn.addEventListener("click", () => loadModels());
   if (modelFilter) {
     modelFilter.addEventListener("input", () => renderModelSelect(modelEl.value));
   }
@@ -107,13 +104,12 @@
     });
   });
 
-  pingServer().then(() => loadModels(true));
+  loadModels();
 
   function applyPreset(overwrite) {
     const preset = PRESETS[providerEl.value];
     if (!preset) return;
     if (overwrite || !modelEl.value) modelEl.value = preset.model;
-    if (overwrite || !baseUrlEl.value) baseUrlEl.value = preset.baseUrl;
     keyHint.textContent = preset.hint;
     persist();
   }
@@ -122,22 +118,16 @@
     localStorage.setItem("workupiq.settings", JSON.stringify({
       provider: providerEl.value,
       model: modelEl.value,
-      baseUrl: baseUrlEl.value,
       apiKey: apiKeyEl.value,
       company: companyEl.value,
     }));
   }
 
-  async function pingServer() {
+  async function readJson(res) {
     try {
-      const res = await fetch("/api/health");
-      if (!res.ok) throw new Error("down");
-      const data = await res.json();
-      serverStatus.textContent = "Local server · " + data.status + (data.workup_parser ? " · " + data.workup_parser : "");
-      return true;
+      return await res.json();
     } catch {
-      serverStatus.textContent = "The local server isn’t connected. In the project’s local folder, run python3 server.py, then open its localhost address.";
-      return false;
+      throw new Error("Unexpected response from the server (HTTP " + res.status + "). Please try again.");
     }
   }
 
@@ -203,20 +193,16 @@
     };
   }
 
-  async function loadModels(live) {
+  async function loadModels() {
     modelStatus.textContent = "Loading catalog…";
     modelSelect.innerHTML = "";
     const provider = providerEl.value;
     try {
       const headers = {};
       if (apiKeyEl.value) headers["X-API-Key"] = apiKeyEl.value;
-      const params = new URLSearchParams({
-        provider: provider,
-        live: live ? "1" : "0",
-      });
-      if (baseUrlEl.value) params.set("base_url", baseUrlEl.value);
+      const params = new URLSearchParams({ provider });
       const res = await fetch("/api/models?" + params.toString(), { headers });
-      const data = await res.json();
+      const data = await readJson(res);
       if (!res.ok) throw new Error(data.error || "catalog failed");
       catalogModels = data.models || [];
       catalogMeta = { source: data.source || "unknown", free_count: data.free_count || 0 };
@@ -229,7 +215,7 @@
       renderModelSelect(modelEl.value);
       persist();
     } catch (err) {
-      const reason = (await pingServer()) ? String(err.message || err) : "start the local server for live models";
+      const reason = String(err.message || err);
       try {
         const snap = await snapshotCatalog(provider);
         catalogModels = snap.models;
@@ -247,32 +233,75 @@
     }
   }
 
+  async function extractPdf(file) {
+    const root = "/vendor/pdfjs-6.5.438/";
+    const pdfjs = await import(root + "pdf.min.mjs");
+    pdfjs.GlobalWorkerOptions.workerSrc = root + "pdf.worker.min.mjs";
+    const task = pdfjs.getDocument({
+      data: new Uint8Array(await file.arrayBuffer()),
+      cMapUrl: root + "cmaps/",
+      cMapPacked: true,
+      isEvalSupported: false,
+    });
+    try {
+      const pdf = await task.promise;
+      const pages = [];
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const content = await page.getTextContent();
+        pages.push(content.items.map((item) => (item.str || "") + (item.hasEOL ? "\n" : " ")).join("").replace(/[ \t]+\n/g, "\n").trim());
+        page.cleanup();
+      }
+      return { parts: pages, label: "Slide/page" };
+    } catch (err) {
+      if (err && err.name === "PasswordException") {
+        throw new Error("This PDF is password-protected. Remove the password and try again.");
+      }
+      throw err;
+    } finally {
+      await task.destroy();
+    }
+  }
+
+  async function extractPptx(file) {
+    const zip = await JSZip.loadAsync(file);
+    const names = Object.keys(zip.files)
+      .map((name) => ({ name, match: name.match(/^ppt\/slides\/slide(\d+)\.xml$/) }))
+      .filter((entry) => entry.match)
+      .sort((a, b) => Number(a.match[1]) - Number(b.match[1]));
+    const slides = [];
+    for (const { name } of names) {
+      const doc = new DOMParser().parseFromString(await zip.file(name).async("string"), "application/xml");
+      const runs = doc.getElementsByTagNameNS("http://schemas.openxmlformats.org/drawingml/2006/main", "t");
+      slides.push(Array.from(runs).map((run) => run.textContent).filter(Boolean).join("\n"));
+    }
+    return { parts: slides, label: "Slide" };
+  }
+
   async function handleFile(file) {
     filename = file.name;
     fileEl.value = "";
     runBtn.disabled = true;
+    if (runRedBtn) runRedBtn.disabled = true;
     pack = null;
-    fileStatus.textContent = "Checking local server…";
-    if (!(await pingServer())) {
-      extracted = "";
-      fileStatus.textContent = "Couldn’t read " + file.name + " because the local WorkupIQ server isn’t connected. Your file wasn’t uploaded. Follow the steps under “Start the local app” above, then try again from the local page.";
-      $("localSetup").open = true;
-      fileStatus.scrollIntoView({ block: "nearest" });
-      return;
-    }
-    fileStatus.textContent = "Extracting " + file.name + "…";
-    const body = new FormData();
-    body.append("file", file);
+    extracted = "";
+    resultEl.textContent = "";
+    fileStatus.textContent = "Reading " + file.name + "…";
     try {
-      const res = await fetch("/api/extract", { method: "POST", body });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Extract failed");
-      extracted = data.text || "";
-      fileStatus.textContent = file.name + " · " + extracted.length.toLocaleString() + " characters · " + (data.pages || "?") + " parts";
-      const ready = extracted.length < 40;
-      runBtn.disabled = ready;
-      if (runRedBtn) runRedBtn.disabled = ready;
-      resultEl.textContent = extracted.slice(0, 4000) || "(empty extract)";
+      const name = file.name.toLowerCase();
+      let result;
+      if (name.endsWith(".pdf")) result = await extractPdf(file);
+      else if (name.endsWith(".pptx")) result = await extractPptx(file);
+      else throw new Error("Please choose a PDF or PPTX file.");
+      if (!result.parts.some((part) => part.trim())) {
+        throw new Error("We couldn’t find selectable text in " + file.name + ". It may be an image-only deck. Export it with live text and try again.");
+      }
+      extracted = result.parts.map((part, i) => "--- " + result.label + " " + (i + 1) + " ---\n" + part).join("\n\n");
+      fileStatus.textContent = file.name + " · " + extracted.length.toLocaleString() + " characters · " + result.parts.length + " parts";
+      const tooShort = extracted.length < 40;
+      runBtn.disabled = tooShort;
+      if (runRedBtn) runRedBtn.disabled = tooShort;
+      resultEl.textContent = extracted.slice(0, 4000);
       activeTab = "extract";
       document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t.dataset.tab === "extract"));
     } catch (err) {
@@ -291,8 +320,8 @@
   async function runScreen(opts) {
     if (!extracted) return;
     const model = modelEl.value || modelSelect.value;
-    if (providerEl.value !== "ollama" && !apiKeyEl.value.trim()) {
-      resultEl.textContent = "Add an API key, or switch provider to Ollama.";
+    if (!apiKeyEl.value.trim()) {
+      resultEl.textContent = "Add your API key to run a review.";
       return;
     }
     const redTeam = !opts || opts.redTeam !== false;
@@ -305,31 +334,41 @@
       if (masterBox) masterBox.checked = true;
       attacks = ["gatekeeper"];
     }
-    resultEl.textContent = redTeam
-      ? "Running pack + " + attacks.join(", ") + " on " + model + "…"
-      : "Running pack only on " + model + "…";
-    try {
-      const res = await fetch("/api/workup", {
+    const steps = 1 + attacks.length;
+    const progress = (step, label) => {
+      resultEl.textContent = "Step " + step + " of " + steps + ": " + label + " on " + model + "…";
+    };
+    const common = {
+      text: extracted.slice(0, 80000),
+      filename,
+      company: companyEl.value,
+      provider: providerEl.value,
+      model,
+      api_key: apiKeyEl.value,
+    };
+    const post = async (path, body) => {
+      const res = await fetch(path, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          text: extracted,
-          filename,
-          company: companyEl.value,
-          provider: providerEl.value,
-          model,
-          base_url: baseUrlEl.value,
-          api_key: apiKeyEl.value,
-          attacks,
-        }),
+        body: JSON.stringify(body),
       });
-      let data = {};
-      try {
-        data = await res.json();
-      } catch {
-        throw new Error("Server returned a non-JSON body (HTTP " + res.status + "). Restart python3 server.py.");
+      const data = await readJson(res);
+      if (!res.ok) throw new Error(data.error || "The review failed. Please try again.");
+      return data;
+    };
+    try {
+      progress(1, "drafting documents");
+      const data = await post("/api/workup", common);
+      data.attacks = {};
+      data.attacks_requested = attacks;
+      for (let i = 0; i < attacks.length; i++) {
+        progress(i + 2, attacks[i] + " review");
+        try {
+          data.attacks[attacks[i]] = (await post("/api/attack", { ...common, attack: attacks[i] })).markdown;
+        } catch (err) {
+          data.attacks[attacks[i]] = "This review failed: " + String(err.message || err);
+        }
       }
-      if (!res.ok) throw new Error(data.error || "Workup failed");
       pack = data;
       downloadBtn.disabled = false;
       activeTab = "verdict";

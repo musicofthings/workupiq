@@ -1,15 +1,18 @@
 /**
  * WorkupIQ Worker
- * - Serves static assets (landing + app shell)
+ * - Serves static assets (landing + pitch review app)
  * - Handles POST /api/contact → email via Cloudflare Email Routing
+ * - Proxies pitch review calls to the user's model provider (see screen.ts)
  *
- * Screen logic stays 100% local. Keys and decks never reach this Worker.
+ * Deck files are read in the browser and never reach this Worker.
  */
 
 import { EmailMessage } from "cloudflare:email";
+import { handleScreenApi } from "./screen";
 
 export interface Env {
   ASSETS: Fetcher;
+  ALLOWED_ORIGINS?: string;
   SEB: {
     send(message: EmailMessage): Promise<void>;
   };
@@ -23,13 +26,22 @@ interface ContactPayload {
   _gotcha?: string;
 }
 
-function corsHeaders(origin?: string | null): HeadersInit {
+function corsHeaders(origin?: string | null): Record<string, string> {
   return {
-    "Access-Control-Allow-Origin": origin || "*",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
+    ...(origin ? { "Access-Control-Allow-Origin": origin } : {}),
+    Vary: "Origin",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, X-API-Key",
     "Access-Control-Max-Age": "86400",
   };
+}
+
+function isAllowedOrigin(origin: string | null, url: URL, env: Env): boolean {
+  if (!origin || origin === url.origin) return true;
+  return (env.ALLOWED_ORIGINS || "")
+    .split(",")
+    .map((item) => item.trim())
+    .includes(origin);
 }
 
 function json(data: unknown, status = 200, origin?: string | null): Response {
@@ -174,8 +186,21 @@ export default {
   async fetch(request: Request, env: Env, _ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
-    if (url.pathname === "/api/contact") {
-      return handleContact(request, env);
+    if (url.pathname.startsWith("/api/")) {
+      const origin = request.headers.get("Origin");
+      if (!isAllowedOrigin(origin, url, env)) {
+        return json({ error: "Origin not allowed" }, 403);
+      }
+      if (url.pathname === "/api/contact") {
+        return handleContact(request, env);
+      }
+      if (request.method === "OPTIONS") {
+        return new Response(null, { status: 204, headers: corsHeaders(origin) });
+      }
+      const response = (await handleScreenApi(request, url)) ?? json({ error: "Not found" }, 404);
+      const withCors = new Response(response.body, response);
+      for (const [name, value] of Object.entries(corsHeaders(origin))) withCors.headers.set(name, value);
+      return withCors;
     }
 
     return env.ASSETS.fetch(request);

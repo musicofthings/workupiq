@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WorkupIQ — Give your pitch a second look</title>
-  <meta name="description" content="Review your pitch with your chosen AI model. Find missing evidence, draft a memo, and prepare answers to investor questions. Requires the local WorkupIQ server." />
+  <meta name="description" content="Review your pitch with your chosen AI model. Find missing evidence, draft a memo, and prepare answers to investor questions." />
   <meta name="theme-color" content="#FAF9F6" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,17 +40,8 @@
       <header class="screen-intro">
         <p class="kicker">Your deck. Your choice of model.</p>
         <h1>What needs work before you hit send?</h1>
-        <p class="lede">Choose a provider, add your API key, and upload your deck. The app saves your key in this browser and uses the local server to send deck text to your chosen provider. Provider usage charges may apply.</p>
+        <p class="lede">Choose a provider, add your API key, and upload your deck. Your file is read in this browser and never uploaded. For each review, the deck text and your key pass through WorkupIQ to your chosen provider and aren’t stored by WorkupIQ. Your key is saved only in this browser. Provider usage charges may apply.</p>
       </header>
-
-      <details class="screen-settings" id="localSetup">
-        <summary>First time here? Start the local app</summary>
-        <p>This page needs the WorkupIQ server running on your computer to read files and run reviews. From the project folder, run:</p>
-        <pre>cd local
-python3 -m pip install -r requirements.txt
-python3 server.py</pre>
-        <p>Then open <a href="http://127.0.0.1:8080/app.html">the local pitch review</a>. If you already have it running, you’re ready to go.</p>
-      </details>
 
       <div class="app-layout">
         <aside class="screen-rail">
@@ -64,8 +55,6 @@ python3 server.py</pre>
                 <option value="openai">OpenAI</option>
                 <option value="anthropic">Anthropic</option>
                 <option value="gemini">Google Gemini</option>
-                <option value="ollama">Ollama (local)</option>
-                <option value="custom">OpenAI-compatible</option>
               </select>
             </label>
             <label class="field field-model">
@@ -81,10 +70,6 @@ python3 server.py</pre>
               <input id="model" placeholder="provider/model" />
             </label>
             <label class="field">
-              Base URL
-              <input id="baseUrl" value="https://openrouter.ai/api/v1" />
-            </label>
-            <label class="field">
               API key
               <input id="apiKey" type="password" autocomplete="off" placeholder="Saved in this browser" />
             </label>
@@ -98,7 +83,6 @@ python3 server.py</pre>
             </div>
           </section>
           <p class="muted" id="keyHint">OpenRouter: free variants are listed first. Use openrouter/free for the free router.</p>
-          <p class="status-line" id="serverStatus">Checking local server…</p>
           <p class="status-line" id="modelStatus"></p>
         </aside>
 
@@ -143,12 +127,13 @@ python3 server.py</pre>
     <div class="wrap footer-inner">
       <div class="footer-brand">
         <p><strong>WorkupIQ pitch review</strong></p>
-        <p>Deck text goes to your chosen model provider through the local server.</p>
+        <p>Deck text and your key pass through WorkupIQ to your chosen provider and aren’t stored by WorkupIQ.</p>
       </div>
       <p class="footer-links"><a href="index.html">Back to site</a></p>
     </div>
   </footer>
   <script src="app.js"></script>
-  <script src="screen.js?v=20261105a"></script>
+  <script src="/vendor/jszip-3.10.2/jszip.min.js" defer></script>
+  <script src="screen.js?v=20261105b"></script>
 </body>
 </html>
