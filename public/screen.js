@@ -248,9 +248,18 @@
 
   async function handleFile(file) {
     filename = file.name;
-    fileStatus.textContent = "Extracting " + file.name + "…";
+    fileEl.value = "";
     runBtn.disabled = true;
     pack = null;
+    fileStatus.textContent = "Checking local server…";
+    if (!(await pingServer())) {
+      extracted = "";
+      fileStatus.textContent = "Couldn’t read " + file.name + " because the local WorkupIQ server isn’t connected. Your file wasn’t uploaded. Follow the steps under “Start the local app” above, then try again from the local page.";
+      $("localSetup").open = true;
+      fileStatus.scrollIntoView({ block: "nearest" });
+      return;
+    }
+    fileStatus.textContent = "Extracting " + file.name + "…";
     const body = new FormData();
     body.append("file", file);
     try {
