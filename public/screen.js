@@ -229,19 +229,20 @@
       renderModelSelect(modelEl.value);
       persist();
     } catch (err) {
+      const reason = (await pingServer()) ? String(err.message || err) : "start the local server for live models";
       try {
         const snap = await snapshotCatalog(provider);
         catalogModels = snap.models;
         catalogMeta = { source: "snapshot", free_count: snap.free_count };
         renderModelSelect(modelEl.value);
-        modelStatus.textContent += " · live catalog unavailable (" + (err.message || err) + ")";
+        modelStatus.textContent += " · live catalog unavailable (" + reason + ")";
         persist();
       } catch {
         catalogModels = [];
         catalogMeta = { source: "fallback", free_count: 0 };
         const preset = PRESETS[provider] || {};
         modelSelect.appendChild(optionFor({ id: modelEl.value || preset.model || "custom", free: provider === "openrouter" }));
-        modelStatus.textContent = "Catalog fallback: " + (err.message || err);
+        modelStatus.textContent = "Catalog fallback: " + reason;
       }
     }
   }
